@@ -8,7 +8,7 @@ class CursosController extends Controller
 {
   public function create(){
     //Retorna a view referente ao formulario
-    return view('curso.formulario');
+    return view('cursos.formulario');
   }
 
   public function store(Request $request){
