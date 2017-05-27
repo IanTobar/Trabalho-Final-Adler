@@ -15,14 +15,15 @@ class CursosController extends Controller
     $curso = new Curso();
     $cursos->create($request->all());
 
-    public function index(){
-    $curso = Curso::all();
-    return view('curso.lista')->withCursos($curso);
-        
-    }
+
     //Redireciona para a pagina de formualario de curso para caso o usuário
     //queira criar outro curso, nela deve haver um botão retorno para caso o
     //usuário queira voltar para uma certa pagina
     return redirect->back();
+  }
+  public function index(){
+  $curso = Curso::all();
+  return view('curso.lista')->withCursos($curso);
+
   }
 }
