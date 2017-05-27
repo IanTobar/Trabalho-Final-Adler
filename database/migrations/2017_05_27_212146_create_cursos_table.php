@@ -15,6 +15,11 @@ class CreateCursosTable extends Migration
     {
         Schema::create('cursos', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nomeCurso');
+            $table->integer('cargaHoraria');
+            $table->integer('tamanhoTurma');
+            $table->integer('duracao');
+            $table->string('cordenadorCurso');
             $table->timestamps();
         });
     }
