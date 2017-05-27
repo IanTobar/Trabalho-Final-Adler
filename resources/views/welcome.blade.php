@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Sistema de Gestão Escolar
                 </div>
 
                 <div class="links">
