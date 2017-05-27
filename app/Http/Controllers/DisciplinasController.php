@@ -20,4 +20,9 @@ class DisciplinasController extends Controller
     //usuário queira voltar para uma certa pagina
     return redirect->back();
   }
+  public function index(){
+  $disciplina = Disciplina::all();
+  return view('disciplina.lista')->withDisciplinas($disciplina);
+
+  }
 }
