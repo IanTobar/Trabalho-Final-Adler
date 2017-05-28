@@ -11,12 +11,7 @@
 
 
 					<h1> Cursos </h1>
-          {!! Form::open(['route' => 'curso.show']) !!}
-          {!! Form::label('nomeCurso','Pesquisar: ') !!}
-          {!! Form::input('string','nomeCurso', '', ['class' => 'form-control', 'autofocus', 'placeholder' => 'Exemplo: Sistemas de Informação']) !!}
-          {!! Form::submit('Pesquisar', ['class' => 'btn btn-primary']) !!}
-          {!! Form::close() !!}
-
+          
 				</div>
 
                 <div class="panel-body">
