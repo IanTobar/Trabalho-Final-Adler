@@ -9,6 +9,15 @@
 
                 <div class="panel-body">
               LISTA
+              @foreach($cursos as $curso)
+                  <h3>{{ $curso->title }}</h3>
+                  <p>{{ $curso->description}}</p>
+                  <p>
+                      <a href="{{ route('cursos.show', $task->id) }}" class="btn btn-info">Info</a>
+                      <a href="{{ route('cursos.edit', $task->id) }}" class="btn btn-primary">Editar</a>
+                  </p>
+                  <hr>
+              @endforeach
                 </div>
             </div>
         </div>
