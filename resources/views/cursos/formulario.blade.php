@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
 					Cursos
-					<a class="pull-right" href="{{url('cursos')}}">Lista Cursos</a>
+					<a class="pull-right" href="{{url('curso/show')}}">Lista Cursos</a>
 				</div>
 
                 <div class="panel-body">
