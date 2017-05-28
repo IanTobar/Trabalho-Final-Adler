@@ -15,12 +15,17 @@ class CursosController extends Controller
   public function store(Request $request){
 
 	$curso = new Curso();
-    $curso->create($request->all());
+  $curso->create($request->all());
 
   }
 
-  public function show(){
-	  
+  public function show(String $nome){
+  $nome = '%'.$nome.'%';
+  $curso = new Curso();
+  $curso =  DB::table('cursos')
+                              ->where('nomeCurso','like',$nome);
+
+    return view('cursos/lista',['cursos'=>$curso ]);
   }
 
   public function index(){
@@ -49,11 +54,7 @@ class CursosController extends Controller
 		return Redirect::to(curso/create);
   }
 
-public function show(Request $request){
-$request-
-  $user =  DB::table('cursos')
-                            ->where('nome','like','%%')
-}
+
 
 
 }

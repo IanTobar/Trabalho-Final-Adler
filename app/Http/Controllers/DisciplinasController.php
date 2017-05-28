@@ -25,4 +25,15 @@ class DisciplinasController extends Controller
   return view('disciplina.lista')->withDisciplinas($disciplina);
 
   }
+public function show(String $nome){
+  $nome = '%'.$nome.'%';
+  $disciplina = new Disciplina();
+  $disciplina =  DB::table('disciplinas')
+                              ->where('nomeDisciplina','like',$nome);
+
+    return view('disciplinas/lista',['disciplinas'=>$disciplina ]);
+  }
+
+}
+
 }
