@@ -11,7 +11,7 @@
 					<!-- View da pagina que será acessada após o login -->
                     Você está logado
                     <div>
-                 <a href="{{'curso'}}" class="btn btn-primary">Cursos</a>
+					<a href="{{'curso/create'}}" class="btn btn-primary">Cursos</a>
                </div>
                 </div>
             </div>

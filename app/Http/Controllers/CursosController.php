@@ -13,9 +13,15 @@ class CursosController extends Controller
   }
 
   public function store(Request $request){
-    $curso = new Curso();
+    
+	$curso = new Curso();
     $curso->create($request->all());
 
+	/*Cria uma Session para imprimir a mensagem de que o curso foi cadastrado com sucesso*/
+	/*cria a variavel mensagem_sucesso com o valor Curso cadastrado com sucesso*/
+	/*Esta variavel será configurada no formualario formulario.blade.php*/
+	\Session::flash('mensagem_sucesso', 'Curso cadastrado com sucesso');
+	
 
     //Redireciona para a pagina de formualario de curso para caso o usuário
     //queira criar outro curso, nela deve haver um botão retorno para caso o
@@ -24,8 +30,9 @@ class CursosController extends Controller
   }
 
   public function index(){
-  $cursos = Curso::all();
-  return view('cursos.lista')->withCursos($cursos);
+
+	$cursos = Curso::all();
+	return view('cursos.lista')->withCursos($cursos);
 
   }
 
