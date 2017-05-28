@@ -11,6 +11,6 @@ class Curso extends Model
       'cargaHoraria',
       'tamanhoTurma',
       'duracao',
-      'cordenadorCurso';
+      'cordenadorCurso',
     ];
 }
