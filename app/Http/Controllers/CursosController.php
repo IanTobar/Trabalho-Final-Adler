@@ -39,7 +39,7 @@ class CursosController extends Controller
 
 	$cursos = Curso::all();
 
-	return view('cursos/lista', ['cursos' => $cursos]);
+	return view('cursos.lista', ['cursos' => $cursos]);
 
 /*
 	return view('cursos.lista')->withCursos($cursos);
