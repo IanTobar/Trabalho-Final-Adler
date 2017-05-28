@@ -18,7 +18,7 @@ class DisciplinasController extends Controller
     //Redireciona para a pagina de formualario de curso para caso o usuário
     //queira criar outro curso, nela deve haver um botão retorno para caso o
     //usuário queira voltar para uma certa pagina
-    return redirect->back();
+    return redirect::to(disciplina/create);
   }
   public function index(){
   $disciplina = Disciplina::all();
