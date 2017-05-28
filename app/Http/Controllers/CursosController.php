@@ -16,7 +16,7 @@ class CursosController extends Controller
     $curso = new Curso();
     $cursos->create($request->all());
 
-	
+
     //Redireciona para a pagina de formualario de curso para caso o usuário
     //queira criar outro curso, nela deve haver um botão retorno para caso o
     //usuário queira voltar para uma certa pagina
@@ -28,22 +28,22 @@ class CursosController extends Controller
   return view('curso.lista')->withCursos($cursos);
 
   }
-  
+
   //Função para excluir um curso
   //Receberá a id do curso que será excluído
   public function destroy($id){
-	  
-	  
+
+
 		$cliente = Cliente::findOrFail($id);
-		
+
 		$cliente->delete();
-		
+
 		\Session::flash('mensagem_sucesso', 'Curso deletado com sucesso!');
-		
-		return Redirect::to(curso/create);		  
-	  
-  }  	
-		
-	
-		
+
+		return Redirect::to(curso/create);
+
+  }
+
+
+
 }
