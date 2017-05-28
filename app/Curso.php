@@ -6,20 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Curso extends Model
 {
-<<<<<<< HEAD
-    protected $fillable = [
-=======
 
-    protected $fillable =[
->>>>>>> 1e4ebe9... atualizando arquivos
+      protected $fillable = [
       'nomeCurso',
       'cargaHoraria',
       'tamanhoTurma',
       'duracao',
-      'cordenadorCurso';
-<<<<<<< HEAD
-    ];
-=======
-    ]
->>>>>>> 1e4ebe9... atualizando arquivos
+      'cordenadorCurso',
+    ]  ;
 }
