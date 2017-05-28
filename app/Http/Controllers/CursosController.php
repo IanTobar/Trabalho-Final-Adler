@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Curso;
 
 class CursosController extends Controller
 {
@@ -15,22 +16,18 @@ class CursosController extends Controller
     $curso = new Curso();
     $cursos->create($request->all());
 
-<<<<<<< HEAD
-=======
-
->>>>>>> ExibirCursoEDisciplina
+	
     //Redireciona para a pagina de formualario de curso para caso o usuário
     //queira criar outro curso, nela deve haver um botão retorno para caso o
     //usuário queira voltar para uma certa pagina
     return redirect::to(curso/create);
   }
-<<<<<<< Updated upstream
+
   public function index(){
-  $curso = Curso::all();
-  return view('curso.lista')->withCursos($curso);
+  $cursos = Curso::all();
+  return view('curso.lista')->withCursos($cursos);
 
   }
-=======
   
   //Função para excluir um curso
   //Receberá a id do curso que será excluído
@@ -49,6 +46,4 @@ class CursosController extends Controller
 		
 	
 		
-  
->>>>>>> Stashed changes
 }
