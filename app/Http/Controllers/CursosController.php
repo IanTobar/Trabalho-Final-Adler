@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Curso;
-
+use Redirect;
 class CursosController extends Controller
 {
   public function create(){
@@ -14,13 +14,13 @@ class CursosController extends Controller
 
   public function store(Request $request){
     $curso = new Curso();
-    $cursos->create($request->all());
+    $curso->create($request->all());
 
 
     //Redireciona para a pagina de formualario de curso para caso o usuário
     //queira criar outro curso, nela deve haver um botão retorno para caso o
     //usuário queira voltar para uma certa pagina
-    return redirect::to(curso/create);
+    return redirect::to('curso/create');
   }
 
   public function index(){

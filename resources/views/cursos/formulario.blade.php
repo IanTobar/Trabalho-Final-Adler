@@ -8,24 +8,24 @@
                 <div class="panel-heading">Cursos</div>
 
                 <div class="panel-body">
-                  {!! Form::open() !!}
+                  {!! Form::open(['route' => 'curso.store']) !!}
 
                   {!! Form::label('nomeCurso','Nome do Curso: ') !!}
-                  {!! Form::input('string','nomeCurso') !!}
+                  {!! Form::input('string','nomeCurso', '', ['class' => 'form-control', 'autofocus', 'placeholder' => 'Exemplo: Sistemas de Informação']) !!}
 
 
                   {!! Form::label('cargaHoraria','Carga Horária: ') !!}
-                  {!! Form::input('integer','cargaHoraria') !!}
+                  {!! Form::input('integer','cargaHoraria', '',  ['class' => 'form-control', 'placeholder' => 'Exemplo: 3000']) !!}
 
 
                   {!! Form::label('tamanhoTurma','Tamanho da Turma: ') !!}
-                  {!! Form::input('integer','tamanhoTurma') !!}
+                  {!! Form::input('integer','tamanhoTurma' ,'',  ['class' => 'form-control', 'placeholder' => 'Exemplo: 24']) !!}
 
-                  {!! Form::label('duracao','Duração em periodos: ') !!}
-                  {!! Form::input('integer','duracao') !!}
+                  {!! Form::label('duracao','Duração em períodos: ') !!}
+                  {!! Form::input('integer','duracao' ,'',  ['class' => 'form-control', 'placeholder' => 'Exemplo: 8'] ) !!}
 
                   {!! Form::label('cordenadorCurso','Coordenador do Curso: ') !!}
-                  {!! Form::input('string','cordenadorCurso') !!}
+                  {!! Form::input('string','cordenadorCurso' ,'',  ['class' => 'form-control', 'placeholder' => 'Exemplo: Sistemas de Informação']) !!}
 
                   {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
                   {!! Form::close() !!}

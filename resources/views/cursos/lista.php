@@ -13,8 +13,13 @@
                   <h3>{{ $curso->title }}</h3>
                   <p>{{ $curso->description}}</p>
                   <p>
+<<<<<<< HEAD
                       <a href="{{ route('cursos.show', $curso->id) }}" class="btn btn-info">Info</a>
                       <a href="{{ route('cursos.edit', $curso->id) }}" class="btn btn-primary">Editar</a>
+=======
+                      <a href="{{ route('cursos.show', $task->id) }}" class="btn btn-info">Info</a>
+                      <a href="{{ route('cursos.edit', $task->id) }}" class="btn btn-primary">Editar</a>
+>>>>>>> AjeitandoFormulárioCurso
                   </p>
                   <hr>
               @endforeach
