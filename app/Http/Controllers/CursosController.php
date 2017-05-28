@@ -19,11 +19,24 @@ class CursosController extends Controller
 
   }
 
+  public function show(){
+	  
+	  $cursos = Curso::get();
+	  
+	  return view('cursos.lista', ['cursos' => $cursos]);
+	  
+  }
+  
   public function index(){
 
-	$cursos = Curso::all();
-	return view('cursos.lista')->withCursos($cursos);
 
+	$cursos = Curso::all();
+	
+	return view('cursos/lista', ['cursos' => $cursos]);
+	
+/*	
+	return view('cursos.lista')->withCursos($cursos);
+*/
   }
 
   //Função para excluir um curso
