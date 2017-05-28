@@ -26,6 +26,12 @@ class CursosController extends Controller
 
   }
 
+public function recebePesquisa(Request $request)
+{
+  $name = $request->input('nomeCurso'); // This is better than using $_POST
+ return  Redirect::to('curso/create');
+}
+
   public function show(){
 
 	  $cursos = Curso::get();
@@ -56,7 +62,7 @@ class CursosController extends Controller
 
 		/*Deleta o cliente*/
 		$cursos->delete();
-		
+
 
 		/*declara variavel mensagem_sucesso com a mensagem do Cuso deletado com sucesso*/
 		\Session::flash('mensagem_sucesso', 'Curso deletado com sucesso!');

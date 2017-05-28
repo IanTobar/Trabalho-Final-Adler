@@ -11,7 +11,10 @@
 
 
 					<h1> Cursos </h1>
-          
+          <form action = "{{route('pesquisa')}}" method="GET">
+            <input name ='nomeCurso' type="text">
+            <input type="submit">
+        </form>
 				</div>
 
                 <div class="panel-body">
@@ -22,8 +25,8 @@
 						<div class = "alert alert-success">{{Session::get('mensagem_sucesso')}}</div>
 
 					@endif
-				
-				
+
+
                   @foreach($cursos as $curso)
               <h2>{{ $curso->nomeCurso }}</h2>
               <p> <b> Carga Horária:  </b> {{ $curso->cargaHoraria}} horas. </p>
@@ -31,24 +34,24 @@
               <p> <b> Duração:  </b> {{ $curso->duracao}} perídos. </p>
               <p>  <b> Coordenador:  </b>{{ $curso->cordenadorCurso}}.</p>
               <p>
-			  
+
 				<table>
                   <tr>
-				  
+
 					<td>
 						<a href="{{ route('curso.edit', $curso->id) }}" class="btn btn-warning">Editar</a>
 <!--
 					<a href="{{ route('curso.destroy', $curso->id) }}" class="btn btn-danger">Excluir</a>
 -->
 						{!! Form::open(['method' => 'DELETE', 'url' => 'curso/'.$curso->id, 'style' => 'display:inline']) !!}
-				
+
 							<button type="submit" class="btn btn-danger">Excluir</button>
 
 						{!! Form::close() !!}
 						</td>
 					</tr>
 				</table>
-    
+
 	</p>
               <hr>
           @endforeach
