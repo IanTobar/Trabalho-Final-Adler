@@ -51,13 +51,18 @@ class CursosController extends Controller
   public function destroy($id){
 
 
-		$cliente = Cliente::findOrFail($id);
+		/*Função para achar o cliente com o id passado, se não achar a página da erro*/
+		$cursos = Curso::find($id);
 
-		$cliente->delete();
+		/*Deleta o cliente*/
+		$cursos->delete();
+		
 
+		/*declara variavel mensagem_sucesso com a mensagem do Cuso deletado com sucesso*/
 		\Session::flash('mensagem_sucesso', 'Curso deletado com sucesso!');
 
-		return Redirect::to(curso/create);
+		/*redireciona o usuário para a pagina cursos.formulario (retornada no create deste controller*/
+		return Redirect::to('curso/lista');
 
   }
 
