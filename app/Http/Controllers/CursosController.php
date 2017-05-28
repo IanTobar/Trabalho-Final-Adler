@@ -21,20 +21,16 @@ class CursosController extends Controller
 
   public function show(){
 	  
-	  $cursos = Curso::get();
-	  
-	  return view('cursos.lista', ['cursos' => $cursos]);
-	  
   }
-  
+
   public function index(){
 
 
 	$cursos = Curso::all();
-	
+
 	return view('cursos/lista', ['cursos' => $cursos]);
-	
-/*	
+
+/*
 	return view('cursos.lista')->withCursos($cursos);
 */
   }
@@ -51,9 +47,13 @@ class CursosController extends Controller
 		\Session::flash('mensagem_sucesso', 'Curso deletado com sucesso!');
 
 		return Redirect::to(curso/create);
-
   }
 
+public function show(Request $request){
+$request-
+  $user =  DB::table('cursos')
+                            ->where('nome','like','%%')
+}
 
 
 }
