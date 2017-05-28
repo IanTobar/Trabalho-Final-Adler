@@ -36,7 +36,7 @@ class CursosController extends Controller
 
       return view('cursos/lista',['cursos'=>$curso ]);
 
-	  
+
   }
 
   public function index(){
@@ -63,3 +63,4 @@ class CursosController extends Controller
 
 		return Redirect::to(curso/create);
   }
+}
