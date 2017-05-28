@@ -16,7 +16,10 @@ class CursosController extends Controller
     $curso = new Curso();
     $cursos->create($request->all());
 
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 1e4ebe9... atualizando arquivos
     //Redireciona para a pagina de formualario de curso para caso o usuário
     //queira criar outro curso, nela deve haver um botão retorno para caso o
     //usuário queira voltar para uma certa pagina
