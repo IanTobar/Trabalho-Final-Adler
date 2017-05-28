@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "75ba431fb4ccf48ce8a358d938bb8d86",
-=======
-    "content-hash": "cf87ff58f7590af8c0e8045cb9033c02",
->>>>>>> TelaDeLogin
+    "content-hash": "39dc275ae77d1e441dfbc28cb46edb0d",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
