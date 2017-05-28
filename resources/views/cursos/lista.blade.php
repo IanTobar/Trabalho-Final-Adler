@@ -7,7 +7,15 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                   <a class= "pull-right btn btn-primary"   href = "{{url('curso/create')}}" >Novo Curso</a>
+
+
+
 					<h1> Cursos </h1>
+          {!! Form::open(['route' => 'curso.show']) !!}
+          {!! Form::label('nomeCurso','Nome do Curso: ') !!}
+          {!! Form::input('string','nomeCurso', '', ['class' => 'form-control', 'autofocus', 'placeholder' => 'Exemplo: Sistemas de Informação']) !!}
+          {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
+          {!! Form::close() !!}
 
 				</div>
 
