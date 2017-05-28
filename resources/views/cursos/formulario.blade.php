@@ -7,19 +7,19 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
 					Cursos
-					<a class="pull-right" href="{{url('curso/show')}}">Lista Cursos</a>
+					<a class="pull-right" href="{{url('curso/index')}}">Lista Cursos</a>
 				</div>
 
                 <div class="panel-body">
-				
+
 					<!-- A variavel mensagem_sucesso foi criada no controller CursosController*/ -->
 					@if(Session::has('mensagem_sucesso'))
-					
+
 						<!-- imprime o valor da variavel mensagem_sucesso -->
 						<div class = "alert alert-success">{{Session::get('mensagem_sucesso')}}</div>
-					
+
 					@endif
-					
+
 						{!! Form::open(['route' => 'curso.store']) !!}
 
 						{!! Form::label('nomeCurso','Nome do Curso: ') !!}

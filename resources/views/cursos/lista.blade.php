@@ -6,14 +6,34 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-					Clientes
-					<a class="pull-right" href = "{{url('clientes/novo')}}">Novo cliente</a>
+                  <a class= "pull-right btn btn-primary"   href = "{{url('curso/create')}}" >Novo Curso</a>
+
+
+
+					<h1> Cursos </h1>
+          {!! Form::open(['route' => 'curso.show']) !!}
+          {!! Form::label('nomeCurso','Nome do Curso: ') !!}
+          {!! Form::input('string','nomeCurso', '', ['class' => 'form-control', 'autofocus', 'placeholder' => 'Exemplo: Sistemas de Informação']) !!}
+          {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
+          {!! Form::close() !!}
+
 				</div>
 
                 <div class="panel-body">
 
-				{{$cursos}}
-					
+                  @foreach($cursos as $curso)
+              <h2>{{ $curso->nomeCurso }}</h2>
+              <p> <b> Carga Horária:  </b> {{ $curso->cargaHoraria}} horas. </p>
+              <p> <b> Tamanho Máximo:  </b>{{ $curso->tamanhoTurma}} alunos. </p>
+              <p> <b> Duração:  </b> {{ $curso->duracao}} perídos. </p>
+              <p>  <b> Coordenador:  </b>{{ $curso->cordenadorCurso}}.</p>
+              <p>
+                  <a href="{{ route('curso.edit', $curso->id) }}" class="btn btn-warning">Editar</a>
+                  <a href="{{ route('curso.destroy', $curso->id) }}" class="btn btn-danger">Excluir</a>
+              </p>
+              <hr>
+          @endforeach
+
                 </div>
             </div>
         </div>
