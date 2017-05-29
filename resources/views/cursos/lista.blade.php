@@ -6,14 +6,25 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
+                  <table class = "pull-right">
+                    <tr>
+                      <td>
                   <a class= "pull-right btn btn-primary"   href = "{{url('curso/create')}}" >Novo Curso</a>
+                </td>
+                <tr>
+                <td>
 
+                  <p style = "margin-top: 10px"> <a class= "pull-right btn btn-primary"   href = "{{url('curso/show')}}" >Listar Todos</a> </p>
+                </td>
+              </tr>
+              </tr>
+</table>
 
 
 					<h1> Cursos </h1>
-          <form action = "{{route('pesquisa')}}" method="GET">
+          <form action = "{{route('pesquisa')}}" method="GET"> <!-- FORMULÁRIO DE PESQUISA -->
             <input name ='nomeCurso' type="text">
-            <input type="submit">
+            <input type="submit" value ="Pesquisar" class ="btn btn-primary">
         </form>
 				</div>
 
@@ -39,11 +50,11 @@
                   <tr>
 
 					<td>
-					
+
 						<a href="{{ route('curso.edit', $curso->id) }}" class="btn btn-warning">Editar</a>
 
-						
-						
+
+
 						<!-- Botao para excluir o curso, pegara o metodo destroy do arquivo CursosController -->
 						{!! Form::open(['method' => 'DELETE', 'url' => 'curso/'.$curso->id, 'style' => 'display:inline']) !!}
 
