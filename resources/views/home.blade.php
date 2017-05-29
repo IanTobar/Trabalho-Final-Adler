@@ -11,10 +11,10 @@
 					<!-- View da pagina que será acessada após o login -->
                     Você está logado.
                     <div>
-					<a href="{{'curso/create'}}" class="btn btn-primary">Cursos</a>
-					<a href="{{'disciplina/create'}}" class="btn btn-primary">Disciplinas</a>
-					<a href="{{'funcionario/create'}}" class="btn btn-primary">Funcionários</a>
-          <a href="{{'aluno/create'}}" class="btn btn-primary">Alunos</a>
+					<a href="{{'curso/show'}}" class="btn btn-primary">Cursos</a>
+					<a href="{{'disciplina/show'}}" class="btn btn-primary">Disciplinas</a>
+					<a href="{{'funcionario/show'}}" class="btn btn-primary">Funcionários</a>
+          <a href="{{'aluno/show'}}" class="btn btn-primary">Alunos</a>
                </div>
                 </div>
             </div>
