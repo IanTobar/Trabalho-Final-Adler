@@ -50,11 +50,11 @@
                   <tr>
 
 					<td>
-
+					
 						<a href="{{ route('curso.edit', $curso->id) }}" class="btn btn-warning">Editar</a>
 
-
-
+						
+						
 						<!-- Botao para excluir o curso, pegara o metodo destroy do arquivo CursosController -->
 						{!! Form::open(['method' => 'DELETE', 'url' => 'curso/'.$curso->id, 'style' => 'display:inline']) !!}
 
