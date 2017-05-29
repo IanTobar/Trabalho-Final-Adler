@@ -39,6 +39,7 @@
               <p>  <b> Cidade:  </b>{{ $aluno->cidade}}.</p>
               <p>  <b> Bairro:  </b>{{ $aluno->bairro}}.</p>
               <p>  <b> Rua:  </b>{{ $aluno->rua}}.</p>
+              <p>  <b> Numero:  </b>{{ $aluno->numero}}.</p>
               <p>  <b> Complemento:  </b>{{ $aluno->complemento}}.</p>
               <p>  <b> Telefone:  </b>{{ $aluno->telefone}}.</p>
               <p>  <b> E-mail:  </b>{{ $aluno->email}}.</p>
