@@ -23,7 +23,7 @@
 
 					<h1>Disciplinas:</h1>
           <form action = "{{route('pesquisaDisciplina')}}" method="GET"> <!-- FORMULÁRIO DE PESQUISA -->
-            <input name ='nomeCurso' type="text">
+            <input name ='nomeDisciplina' type="text">
             <input type="submit" value ="Pesquisar" class ="btn btn-primary">
         </form>
 				</div>
@@ -67,7 +67,6 @@
 	</p>
               <hr>
           @endforeach
-
                 </div>
             </div>
         </div>
