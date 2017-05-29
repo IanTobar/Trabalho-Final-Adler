@@ -25,12 +25,18 @@ class CursosController extends Controller
     return Redirect::to('curso/create');
 
   }
-
+  /*public  function like($query, $field, $value){ //Funcao para realizar uma query do tipo like
+              return $query->where($field, 'LIKE', "%$value%");
+  }*/
 public function recebePesquisa(Request $request)
 {
   $name = $request->input('nomeCurso'); // This is better than using $_POST
- return  Redirect::to('curso/create');
+  $curso = new Curso();
+  $curso = Curso::where ('nomeCurso','LIKE',"%$name%")->get();
+  return view('cursos.lista', ['cursos' => $curso]);
+ //return  Redirect::to('curso/create');
 }
+
 
   public function show(){
 
