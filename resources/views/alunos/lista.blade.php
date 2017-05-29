@@ -11,6 +11,10 @@
 
 
 					<h1> Alunos: </h1>
+          <form action = "{{route('pesquisaAluno')}}" method="GET"> <!-- FORMULÁRIO DE PESQUISA -->
+            <input name ='nomeAluno' type="text">
+            <input type="submit" value ="Pesquisar" class ="btn btn-primary">
+          </form>
 
 				</div>
 
