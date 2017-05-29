@@ -57,6 +57,9 @@
 						{!! Form::label('rua','Rua: ') !!}
 						{!! Form::input('string','rua' , null,  ['class' => 'form-control', 'placeholder' => 'rua']) !!}
 
+            {!! Form::label('numero','Numero: ') !!}
+						{!! Form::input('string','numero' , null,  ['class' => 'form-control', 'placeholder' => 'numero']) !!}
+
             {!! Form::label('complemento','complemento: ') !!}
 						{!! Form::input('string','complemento' , null,  ['class' => 'form-control', 'placeholder' => 'complemento']) !!}
 
