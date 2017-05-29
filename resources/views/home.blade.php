@@ -13,6 +13,8 @@
                     <div>
 					<a href="{{'curso/show'}}" class="btn btn-primary">Cursos</a>
 					<a href="{{'disciplina/show'}}" class="btn btn-primary">Disciplinas</a>
+					<a href="{{'funcionario/show'}}" class="btn btn-primary">Funcionários</a>
+          <a href="{{'aluno/show'}}" class="btn btn-primary">Alunos</a>
                </div>
                 </div>
             </div>

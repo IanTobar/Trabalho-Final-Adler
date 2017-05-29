@@ -31,6 +31,8 @@ Route::group(['middleware' => 'web'], function(){
 
 Route::resource('disciplina','DisciplinasController');
 Route::resource('curso','CursosController');
+Route::resource('funcionario','FuncionariosController');
+Route::resource('aluno','AlunosController');
 
 Auth::routes();
 
@@ -43,4 +45,14 @@ Route::get('/pesquisaCurso',[
 Route::get('/pesquisaDisciplina',[
     'as' => 'pesquisaDisciplina',
     'uses' => 'DisciplinasController@recebePesquisa'
+]);
+
+Route::get('/pesquisaFuncionario',[
+    'as' => 'pesquisaFuncionario',
+    'uses' => 'FuncionariosController@recebePesquisa'
+]);
+
+Route::get('/pesquisaAluno',[
+    'as' => 'pesquisaAluno',
+    'uses' => 'AlunosController@recebePesquisa'
 ]);
