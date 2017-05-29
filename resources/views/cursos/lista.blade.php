@@ -22,7 +22,7 @@
 
 
 					<h1> Cursos </h1>
-          <form action = "{{route('pesquisa')}}" method="GET"> <!-- FORMULÁRIO DE PESQUISA -->
+          <form action = "{{route('pesquisaCurso')}}" method="GET"> <!-- FORMULÁRIO DE PESQUISA -->
             <input name ='nomeCurso' type="text">
             <input type="submit" value ="Pesquisar" class ="btn btn-primary">
         </form>
@@ -50,11 +50,11 @@
                   <tr>
 
 					<td>
-					
+
 						<a href="{{ route('curso.edit', $curso->id) }}" class="btn btn-warning">Editar</a>
 
-						
-						
+
+
 						<!-- Botao para excluir o curso, pegara o metodo destroy do arquivo CursosController -->
 						{!! Form::open(['method' => 'DELETE', 'url' => 'curso/'.$curso->id, 'style' => 'display:inline']) !!}
 

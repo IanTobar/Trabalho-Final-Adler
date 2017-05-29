@@ -36,7 +36,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/pesquisa',[
-    'as' => 'pesquisa',
+Route::get('/pesquisaCurso',[
+    'as' => 'pesquisaCurso',
     'uses' => 'CursosController@recebePesquisa'
+]);
+Route::get('/pesquisaDisciplina',[
+    'as' => 'pesquisaDisciplina',
+    'uses' => 'DisciplinasController@recebePesquisa'
 ]);
