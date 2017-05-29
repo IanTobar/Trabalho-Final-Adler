@@ -26,12 +26,13 @@ Route::group(['middleware' => 'web'], function(){
 
 		/*Pega todas as rotas referente a autenticação (auth)*/
 		Route::auth();
-	
+
 });
 
 Route::resource('disciplina','DisciplinasController');
 Route::resource('curso','CursosController');
 Route::resource('funcionario','FuncionariosController');
+Route::resource('aluno','AlunosController');
 
 Auth::routes();
 

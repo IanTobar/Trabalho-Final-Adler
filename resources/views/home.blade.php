@@ -14,6 +14,7 @@
 					<a href="{{'curso/create'}}" class="btn btn-primary">Cursos</a>
 					<a href="{{'disciplina/create'}}" class="btn btn-primary">Disciplinas</a>
 					<a href="{{'funcionario/create'}}" class="btn btn-primary">Funcionários</a>
+          <a href="{{'aluno/create'}}" class="btn btn-primary">Alunos</a>
                </div>
                 </div>
             </div>
