@@ -16,6 +16,7 @@ class Funcionario extends Model
 	  'cidade',
 	  'bairro',
 	  'rua',
+    'complemento',
 	  'telefone',
 	  'email',
 	  'sexo',

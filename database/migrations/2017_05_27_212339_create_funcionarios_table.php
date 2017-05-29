@@ -16,20 +16,21 @@ class CreateFuncionariosTable extends Migration
         Schema::create('funcionarios', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nomeFuncionario');
-			$table->string('cpf');
-			$table->string('rg');
-			$table->string('dataNasc');
-			$table->string('cep');
-			$table->string('estado');
-			$table->string('cidade');
-			$table->string('bairro');
-			$table->string('rua');
-			$table->string('telefone');
-			$table->string('email');
-			$table->string('sexo');
-			$table->string('carteiraTrabalho');
-			$table->string('salario');
-			$table->string('funcao');
+      			$table->string('cpf');
+      			$table->string('rg');
+      			$table->string('dataNasc');
+      			$table->string('cep');
+      			$table->string('estado');
+      			$table->string('cidade');
+      			$table->string('bairro');
+      			$table->string('rua');
+            $table->string('complemento');
+      			$table->string('telefone');
+      			$table->string('email');
+      			$table->string('sexo');
+      			$table->string('carteiraTrabalho');
+      			$table->string('salario');
+      			$table->string('funcao');
             $table->timestamps();
         });
     }

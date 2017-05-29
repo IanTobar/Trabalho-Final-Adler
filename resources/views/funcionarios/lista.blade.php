@@ -11,7 +11,7 @@
 
 
 					<h1> Funcionarios: </h1>
-          
+
 				</div>
 
                 <div class="panel-body">
@@ -22,8 +22,8 @@
 						<div class = "alert alert-success">{{Session::get('mensagem_sucesso')}}</div>
 
 					@endif
-				
-				
+
+
                   @foreach($funcionarios as $funcionario)
               <h2>{{ $funcionario->nomeFuncionario }}</h2>
               <p> <b> CPF:  </b> {{ $funcionario->cpf}}. </p>
@@ -34,6 +34,7 @@
               <p>  <b> Cidade:  </b>{{ $funcionario->cidade}}.</p>
               <p>  <b> Bairro:  </b>{{ $funcionario->bairro}}.</p>
               <p>  <b> Rua:  </b>{{ $funcionario->rua}}.</p>
+              <p>  <b> Complemento:  </b>{{ $funcionario->complemento}}.</p>
               <p>  <b> Telefone:  </b>{{ $funcionario->telefone}}.</p>
               <p>  <b> E-mail:  </b>{{ $funcionario->email}}.</p>
               <p>  <b> Sexo:  </b>{{ $funcionario->sexo}}.</p>
@@ -41,26 +42,25 @@
               <p>  <b> Salário:  </b>{{ $funcionario->salario}}.</p>
 			  <p>  <b> Função:  </b>{{ $funcionario->funcao}}.</p>
               <p>
-			  
+
 				<table>
                   <tr>
-				  
+
 					<td>
-					
+
 						<a href="{{ route('funcionario.edit', $funcionario->id) }}" class="btn btn-warning">Editar</a>
 
-						
-						
+
 						<!-- Botao para excluir o funcionario, pegara o metodo destroy do arquivo CursosController -->
 						{!! Form::open(['method' => 'DELETE', 'url' => 'funcionario/'.$funcionario->id, 'style' => 'display:inline']) !!}
-				
+
 							<button type="submit" class="btn btn-danger">Excluir</button>
 
 						{!! Form::close() !!}
 						</td>
 					</tr>
 				</table>
-    
+
 	</p>
               <hr>
           @endforeach

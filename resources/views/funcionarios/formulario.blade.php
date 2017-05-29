@@ -19,16 +19,16 @@
 						<div class = "alert alert-success">{{Session::get('mensagem_sucesso')}}</div>
 
 					@endif
-					
+
 					@if(Request::is('*/edit'))
 						{!!Form::model($funcionarios, ['method' => 'PATCH', 'url' => 'funcionario/'.$funcionarios->id])!!}
 					@else
 						{!! Form::open(['route' => 'funcionario.store']) !!}
-					@endif					
-					
+					@endif
+
 						{!! Form::label('nomeFuncionario','Nome do Funcionario: ') !!}
 						{!! Form::input('string','nomeFuncionario', null, ['class' => 'form-control', 'autofocus', 'placeholder' => 'nomeFuncionario']) !!}
-						
+
 
 						{!! Form::label('cpf','CPF: ') !!}
 						{!! Form::input('string','cpf', null,  ['class' => 'form-control', 'placeholder' => 'cpf']) !!}
@@ -55,13 +55,16 @@
 						{!! Form::label('rua','Rua: ') !!}
 						{!! Form::input('string','rua' , null,  ['class' => 'form-control', 'placeholder' => 'rua']) !!}
 
+            {!! Form::label('complemento','Complemento: ') !!}
+						{!! Form::input('string','complemento' , null,  ['class' => 'form-control', 'placeholder' => 'complemento']) !!}
+
 						{!! Form::label('telefone','Telefone: ') !!}
 						{!! Form::input('string','telefone' , null,  ['class' => 'form-control', 'placeholder' => 'telefone']) !!}
 
 						{!! Form::label('email','E-mail: ') !!}
 						{!! Form::input('string','email' , null,  ['class' => 'form-control', 'placeholder' => 'email']) !!}
-						
-						{!! Form::label('lbSexo','Sexo: ') !!}						
+
+						{!! Form::label('lbSexo','Sexo: ') !!}
 						<br/>
 						{!! Form::label('masculino','Masculino: ') !!}
 						{!! Form::radio('sexo', 'masculino') !!}
@@ -69,15 +72,15 @@
 						{!! Form::label('feminino','Feminino: ') !!}
 						{!! Form::radio('sexo', 'feminino') !!}
 						<br/>
-						
+
 						{!! Form::label('carteiraTrabalho','Carteira de Trabalho: ') !!}
 						{!! Form::input('string','carteiraTrabalho' , null,  ['class' => 'form-control', 'placeholder' => 'carteiraTrabalho']) !!}
 
 						{!! Form::label('salario','Salário: ') !!}
 						{!! Form::input('double','salario' , null,  ['class' => 'form-control', 'placeholder' => 'funcao']) !!}
 
-						{!! Form::label('lbFuncao','Função: ') !!}						
-					    
+						{!! Form::label('lbFuncao','Função: ') !!}
+
 						{!! Form::select('funcao', array('diretor' => 'Diretor(a)', 'funcionario' => 'Funcionario(a)', 'professor' => 'Professor(a)')) !!}
 						<!--<br/>
 						{!! Form::label('diretor','Diretor: ') !!}
@@ -89,9 +92,9 @@
 						{!! Form::label('professor','Professor: ') !!}
 						{!! Form::radio('funcao', 'professor') !!}
 						-->
-						<br/> 	
-						
-						
+						<br/>
+
+
 						{!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
 						{!! Form::close() !!}
 
