@@ -31,6 +31,7 @@ Route::group(['middleware' => 'web'], function(){
 
 Route::resource('disciplina','DisciplinasController');
 Route::resource('curso','CursosController');
+Route::resource('funcionario','FuncionariosController');
 
 Auth::routes();
 

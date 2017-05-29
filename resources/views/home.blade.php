@@ -13,6 +13,7 @@
                     <div>
 					<a href="{{'curso/create'}}" class="btn btn-primary">Cursos</a>
 					<a href="{{'disciplina/create'}}" class="btn btn-primary">Disciplinas</a>
+					<a href="{{'funcionario/create'}}" class="btn btn-primary">Funcionários</a>
                </div>
                 </div>
             </div>
