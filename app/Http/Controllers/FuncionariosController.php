@@ -66,12 +66,14 @@ class FuncionariosController extends Controller
 
 	}  
 
+	/*Função para editar funcionario
+	Recebe a id do funcionario a ser editado*/
 	public function edit($id){
 	
 		$funcionarios = Funcionario::findOrFail($id);
 
 		/*Recebe a id para editar o curso e manda o curso para a view formulario*/
-		return view('funcionarios.formulario', ['funcionarios' => $funcionarios]);			
+		return view('funcionarios.edicao', ['funcionarios' => $funcionarios]);			
 	
 	}
   
@@ -79,6 +81,7 @@ class FuncionariosController extends Controller
 	public function update($id, Request $request){
 		
 		$funcionarios = Funcionario::findOrFail($id);
+		
 		
 		$funcionarios->update($request->all());
 		
