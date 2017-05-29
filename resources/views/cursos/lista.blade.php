@@ -39,10 +39,12 @@
                   <tr>
 
 					<td>
+					
 						<a href="{{ route('curso.edit', $curso->id) }}" class="btn btn-warning">Editar</a>
-<!--
-					<a href="{{ route('curso.destroy', $curso->id) }}" class="btn btn-danger">Excluir</a>
--->
+
+						
+						
+						<!-- Botao para excluir o curso, pegara o metodo destroy do arquivo CursosController -->
 						{!! Form::open(['method' => 'DELETE', 'url' => 'curso/'.$curso->id, 'style' => 'display:inline']) !!}
 
 							<button type="submit" class="btn btn-danger">Excluir</button>

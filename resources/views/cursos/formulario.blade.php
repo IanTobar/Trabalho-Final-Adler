@@ -19,25 +19,32 @@
 						<div class = "alert alert-success">{{Session::get('mensagem_sucesso')}}</div>
 
 					@endif
-
+					
+					@if(Request::is('*/edit'))
+						{!!Form::model($cursos, ['method' => 'PATCH', 'url' => 'curso/'.$cursos->id])!!}
+					@else
 						{!! Form::open(['route' => 'curso.store']) !!}
+					@endif					
+					
+
+						
 
 						{!! Form::label('nomeCurso','Nome do Curso: ') !!}
-						{!! Form::input('string','nomeCurso', '', ['class' => 'form-control', 'autofocus', 'placeholder' => 'Exemplo: Sistemas de Informação']) !!}
-
+						{!! Form::input('string','nomeCurso', null, ['class' => 'form-control', 'autofocus', 'placeholder' => 'nomeCurso']) !!}
+						
 
 						{!! Form::label('cargaHoraria','Carga Horária: ') !!}
-						{!! Form::input('integer','cargaHoraria', '',  ['class' => 'form-control', 'placeholder' => 'Exemplo: 3000']) !!}
+						{!! Form::input('integer','cargaHoraria', null,  ['class' => 'form-control', 'placeholder' => 'cargaHoraria']) !!}
 
 
 						{!! Form::label('tamanhoTurma','Tamanho da Turma: ') !!}
-						{!! Form::input('integer','tamanhoTurma' ,'',  ['class' => 'form-control', 'placeholder' => 'Exemplo: 24']) !!}
+						{!! Form::input('integer','tamanhoTurma' , null,  ['class' => 'form-control', 'placeholder' => 'tamanhoTurma']) !!}
 
 						{!! Form::label('duracao','Duração em períodos: ') !!}
-						{!! Form::input('integer','duracao' ,'',  ['class' => 'form-control', 'placeholder' => 'Exemplo: 8'] ) !!}
+						{!! Form::input('integer','duracao' , null,  ['class' => 'form-control', 'placeholder' => 'duracao'] ) !!}
 
 						{!! Form::label('cordenadorCurso','Coordenador do Curso: ') !!}
-						{!! Form::input('string','cordenadorCurso' ,'',  ['class' => 'form-control', 'placeholder' => 'Exemplo: José']) !!}
+						{!! Form::input('string','cordenadorCurso' , null,  ['class' => 'form-control', 'placeholder' => 'cordenadorCurso']) !!}
 
 						{!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
 						{!! Form::close() !!}

@@ -75,6 +75,31 @@ public function recebePesquisa(Request $request){
 
   }
 
+	//Função para editar curso
+	public function edit($id){
 
+		$cursos = Curso::findOrFail($id);
+
+		/*Recebe a id para editar o curso e manda o curso para a view formulario*/
+		return view('cursos.formulario', ['cursos' => $cursos]);	
+		
+/*		
+		return view('cursos.edicao', ['cursos' => $cursos]);	
+	*/	
+
+	}
+	
+	//Função para editar o curso
+	public function update($id, Request $request){
+		
+		$cursos = Curso::findOrFail($id);
+		
+		$cursos->update($request->all());
+		
+		\Session::flash('mensagem_sucesso', 'Curso atualizado com sucesso!');
+		
+		return Redirect::to('curso/lista');		
+		
+	}
 
 }
