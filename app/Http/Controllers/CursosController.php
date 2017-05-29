@@ -26,6 +26,15 @@ class CursosController extends Controller
 
   }
 
+public function recebePesquisa(Request $request){
+  $name = $request->input('nomeCurso'); // This is better than using $_POST
+  $curso = new Curso(); //  Adicionando Variavel do tipo Curso
+  $curso = Curso::where ('nomeCurso','LIKE',"%$name%")->get(); //Realiza a pesquisa do "tipo" LIKE na table nomeCurso, usando a variavel name
+  return view('cursos.lista', ['cursos' => $curso]);//retorna a view
+ //return  Redirect::to('curso/create');
+}
+
+
   public function show(){
 
 	  $cursos = Curso::get();
@@ -56,7 +65,7 @@ class CursosController extends Controller
 
 		/*Deleta o cliente*/
 		$cursos->delete();
-		
+
 
 		/*declara variavel mensagem_sucesso com a mensagem do Cuso deletado com sucesso*/
 		\Session::flash('mensagem_sucesso', 'Curso deletado com sucesso!');

@@ -37,3 +37,12 @@ Route::resource('aluno','AlunosController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/pesquisaCurso',[
+    'as' => 'pesquisaCurso',
+    'uses' => 'CursosController@recebePesquisa'
+]);
+Route::get('/pesquisaDisciplina',[
+    'as' => 'pesquisaDisciplina',
+    'uses' => 'DisciplinasController@recebePesquisa'
+]);
