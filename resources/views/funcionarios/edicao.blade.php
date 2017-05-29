@@ -26,7 +26,7 @@
 						{!! Form::open(['route' => 'funcionario.store']) !!}
 					@endif					
 
-						{!! Form::input('string','nomeFuncionario', null, ['class' => 'form-control', 'autofocus', 'placeholder' => 'nomeFuncionario']) !!}
+						{{$funcionarios->nomeFuncionario }}
 						
 						<br />
 					
