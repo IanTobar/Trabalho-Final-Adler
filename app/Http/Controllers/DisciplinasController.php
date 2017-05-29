@@ -35,7 +35,7 @@ class DisciplinasController extends Controller
     $name = $request->input('nomeDisciplina'); // This is better than using $_POST
     $disciplina = new Disciplina(); //  Adicionando Variavel do tipo disciplina
     $disciplina = Disciplina::where ('nomeDisciplina','LIKE',"%$name%")->get(); //Realiza a pesquisa do "tipo" LIKE na table nomeDisciplina, usando a variavel name
-    return view('disciplina.lista', ['disciplinas' => $disciplina]);//retorna a view
+    return view('disciplinas.lista', ['disciplinas' => $disciplina]);//retorna a view
    //return  Redirect::to('curso/create');
   }
   public function show(){
