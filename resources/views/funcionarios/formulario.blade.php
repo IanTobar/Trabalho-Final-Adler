@@ -6,8 +6,9 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-					Funcionarios
-					<a class="pull-right" href="{{url('funcionario/index')}}">Lista Funcionarios</a>
+                  <a class="pull-right btn btn-primary" href="{{url('funcionario/index')}}">Lista Funcionarios</a>
+					<h1>Inserir Funcionario</h1>
+
 				</div>
 
                 <div class="panel-body">

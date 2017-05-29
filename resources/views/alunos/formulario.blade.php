@@ -6,8 +6,9 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-					Alunos
-					<a class="pull-right" href="{{url('aluno/index')}}">Lista Alunos</a>
+                  <a class="pull-right btn btn-primary" href="{{url('aluno/index')}}">Lista Alunos</a>
+					<h1>Inserir Aluno</h1>
+
 				</div>
 
                 <div class="panel-body">
