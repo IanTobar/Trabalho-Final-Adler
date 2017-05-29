@@ -26,7 +26,7 @@ Route::group(['middleware' => 'web'], function(){
 
 		/*Pega todas as rotas referente a autenticação (auth)*/
 		Route::auth();
-	
+
 });
 
 Route::resource('disciplina','DisciplinasController');
@@ -35,3 +35,8 @@ Route::resource('curso','CursosController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/pesquisa',[
+    'as' => 'pesquisa',
+    'uses' => 'CursosController@recebePesquisa'
+]);

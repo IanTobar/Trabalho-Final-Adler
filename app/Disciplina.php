@@ -8,7 +8,7 @@ class Disciplina extends Model
 {
     protected $fillable = [
       'nomeDisciplina',
-      'cargaHoraria';
-  ]
+      'cargaHoraria',
+  ];
 
 }
