@@ -11,6 +11,10 @@
 
 
 					<h1> Funcionarios: </h1>
+          <form action = "{{route('pesquisaFuncionario')}}" method="GET"> <!-- FORMULÁRIO DE PESQUISA -->
+            <input name ='nomeFuncionario' type="text">
+            <input type="submit" value ="Pesquisar" class ="btn btn-primary">
+          </form>
 
 				</div>
 
