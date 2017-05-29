@@ -25,13 +25,12 @@ class CursosController extends Controller
     return Redirect::to('curso/create');
 
   }
-  
-public function recebePesquisa(Request $request)
-{
+
+public function recebePesquisa(Request $request){
   $name = $request->input('nomeCurso'); // This is better than using $_POST
-  $curso = new Curso();
-  $curso = Curso::where ('nomeCurso','LIKE',"%$name%")->get();
-  return view('cursos.lista', ['cursos' => $curso]);
+  $curso = new Curso(); //  Adicionando Variavel do tipo Curso
+  $curso = Curso::where ('nomeCurso','LIKE',"%$name%")->get(); //Realiza a pesquisa do "tipo" LIKE na table nomeCurso, usando a variavel name
+  return view('cursos.lista', ['cursos' => $curso]);//retorna a view
  //return  Redirect::to('curso/create');
 }
 
