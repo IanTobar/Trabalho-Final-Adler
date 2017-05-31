@@ -46,3 +46,13 @@ Route::get('/pesquisaDisciplina',[
     'as' => 'pesquisaDisciplina',
     'uses' => 'DisciplinasController@recebePesquisa'
 ]);
+
+Route::get('/pesquisaFuncionario',[
+    'as' => 'pesquisaFuncionario',
+    'uses' => 'FuncionariosController@recebePesquisa'
+]);
+
+Route::get('/pesquisaAluno',[
+    'as' => 'pesquisaAluno',
+    'uses' => 'AlunosController@recebePesquisa'
+]);

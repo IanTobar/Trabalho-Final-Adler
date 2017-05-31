@@ -11,6 +11,15 @@
 
 					</div>
 
+
+					<h1> Alunos: </h1>
+          <form action = "{{route('pesquisaAluno')}}" method="GET"> <!-- FORMULÁRIO DE PESQUISA -->
+            <input name ='nomeAluno' type="text">
+            <input type="submit" value ="Pesquisar" class ="btn btn-primary">
+          </form>
+
+				</div>
+
                 <div class="panel-body">
 					<!-- A variavel mensagem_sucesso foi criada no controller CursosController*/ -->
 					@if(Session::has('mensagem_sucesso'))
@@ -41,6 +50,7 @@
               <p>  <b> Cidade:  </b>{{ $aluno->cidade}}.</p>
               <p>  <b> Bairro:  </b>{{ $aluno->bairro}}.</p>
               <p>  <b> Rua:  </b>{{ $aluno->rua}}.</p>
+              <p>  <b> Numero:  </b>{{ $aluno->numero}}.</p>
               <p>  <b> Complemento:  </b>{{ $aluno->complemento}}.</p>
               <p>  <b> Telefone:  </b>{{ $aluno->telefone}}.</p>
               <p>  <b> E-mail:  </b>{{ $aluno->email}}.</p>

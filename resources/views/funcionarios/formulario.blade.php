@@ -6,8 +6,9 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-					Funcionarios
-					<a class="pull-right" href="{{url('funcionario/index')}}">Lista Funcionarios</a>
+                  <a class="pull-right btn btn-primary" href="{{url('funcionario/index')}}">Lista Funcionarios</a>
+					<h1>Inserir Funcionario</h1>
+
 				</div>
 
                 <div class="panel-body">
@@ -54,6 +55,9 @@
 
 						{!! Form::label('rua','Rua: ') !!}
 						{!! Form::input('string','rua' , null,  ['class' => 'form-control', 'placeholder' => 'rua']) !!}
+
+            {!! Form::label('numero','Numero: ') !!}
+            {!! Form::input('string','numero' , null,  ['class' => 'form-control', 'placeholder' => 'numero']) !!}
 
             {!! Form::label('complemento','Complemento: ') !!}
 						{!! Form::input('string','complemento' , null,  ['class' => 'form-control', 'placeholder' => 'complemento']) !!}

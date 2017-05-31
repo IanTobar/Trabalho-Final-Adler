@@ -24,6 +24,7 @@ class CreateFuncionariosTable extends Migration
       			$table->string('cidade');
       			$table->string('bairro');
       			$table->string('rua');
+            $table->string('numero');
             $table->string('complemento');
       			$table->string('telefone');
       			$table->string('email');

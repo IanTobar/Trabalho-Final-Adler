@@ -35,6 +35,16 @@ class AlunosController extends Controller
     return redirect::to('aluno/create');
   }
 
+
+  public function recebePesquisa(Request $request){
+    $name = $request->input('nomeAluno'); // This is better than using $_POST
+    $aluno = new Aluno(); //  Adicionando Variavel do tipo Aluno
+    $aluno = Aluno::where ('nomeAluno','LIKE',"%$name%")->get(); //Realiza a pesquisa do "tipo" LIKE na table nomeAluno, usando a variavel name
+    return view('alunos.lista', ['alunos' => $aluno]);//retorna a view
+   //return  Redirect::to('aluno/create');
+  }
+
+
   public function show(){
 
   $alunos = Aluno::all();

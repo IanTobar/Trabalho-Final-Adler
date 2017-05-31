@@ -11,6 +11,10 @@
 
 
 					<h1> Funcionarios: </h1>
+          <form action = "{{route('pesquisaFuncionario')}}" method="GET"> <!-- FORMULÁRIO DE PESQUISA -->
+            <input name ='nomeFuncionario' type="text">
+            <input type="submit" value ="Pesquisar" class ="btn btn-primary">
+          </form>
 
 				</div>
 
@@ -34,6 +38,7 @@
               <p>  <b> Cidade:  </b>{{ $funcionario->cidade}}.</p>
               <p>  <b> Bairro:  </b>{{ $funcionario->bairro}}.</p>
               <p>  <b> Rua:  </b>{{ $funcionario->rua}}.</p>
+              <p>  <b> Numero:  </b>{{ $funcionario->numero}}.</p>
               <p>  <b> Complemento:  </b>{{ $funcionario->complemento}}.</p>
               <p>  <b> Telefone:  </b>{{ $funcionario->telefone}}.</p>
               <p>  <b> E-mail:  </b>{{ $funcionario->email}}.</p>

@@ -6,8 +6,9 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-					Alunos
-					<a class="pull-right" href="{{url('aluno/index')}}">Lista Alunos</a>
+                  <a class="pull-right btn btn-primary" href="{{url('aluno/index')}}">Lista Alunos</a>
+					<h1>Inserir Aluno</h1>
+
 				</div>
 
                 <div class="panel-body">
@@ -61,6 +62,9 @@
 
 						{!! Form::label('rua','Rua: ') !!}
 						{!! Form::input('string','rua' , null,  ['class' => 'form-control', 'placeholder' => 'rua']) !!}
+
+            {!! Form::label('numero','Numero: ') !!}
+						{!! Form::input('string','numero' , null,  ['class' => 'form-control', 'placeholder' => 'numero']) !!}
 
             {!! Form::label('complemento','complemento: ') !!}
 						{!! Form::input('string','complemento' , null,  ['class' => 'form-control', 'placeholder' => 'complemento']) !!}
