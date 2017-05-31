@@ -16,6 +16,7 @@
 					<a href="{{'funcionario/show'}}" class="btn btn-primary">Funcionários</a>
           <a href="{{'aluno/show'}}" class="btn btn-primary">Alunos</a>
           <a href="{{'conta/show'}}" class="btn btn-primary">Contas a Pagar</a>
+          <a href="{{'incoming/show'}}" class="btn btn-primary">Contas a Receber</a>
                </div>
                 </div>
             </div>
