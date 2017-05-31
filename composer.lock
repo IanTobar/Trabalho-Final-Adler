@@ -4,8 +4,49 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ebc799e0bef66f23bc100e13335ec7da",
+    "content-hash": "a7073248cf6ad2333ce9f46a693489fe",
     "packages": [
+        {
+            "name": "artesaos/cidadesbr",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/artesaos/cidadesbr.git",
+                "reference": "003d2b0133c6357a2d7bb38af513e7a85e8eedd9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/artesaos/cidadesbr/zipball/003d2b0133c6357a2d7bb38af513e7a85e8eedd9",
+                "reference": "003d2b0133c6357a2d7bb38af513e7a85e8eedd9",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Artesaos\\": "src/Artesaos/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jansen Felipe",
+                    "email": "jansen.felipe@gmail.com"
+                }
+            ],
+            "time": "2015-07-15T19:48:13+00:00"
+        },
         {
             "name": "barryvdh/laravel-ide-helper",
             "version": "v2.3.2",
