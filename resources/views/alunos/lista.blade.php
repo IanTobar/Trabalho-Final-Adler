@@ -6,13 +6,10 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                  <a class= "pull-right btn btn-primary"   href = "{{url('aluno/create')}}" >Novo Aluno</a>
+					<a class= "pull-right btn btn-primary"   href = "{{url('aluno/create')}}" >Novo Aluno</a>
+						<h1> Alunos: </h1>
 
-
-
-					<h1> Alunos: </h1>
-
-				</div>
+					</div>
 
                 <div class="panel-body">
 					<!-- A variavel mensagem_sucesso foi criada no controller CursosController*/ -->
@@ -22,13 +19,22 @@
 						<div class = "alert alert-success">{{Session::get('mensagem_sucesso')}}</div>
 
 					@endif
-
-
+							
           @foreach($alunos as $aluno)
+			
+  
               <h2>{{ $aluno->nomeAluno }}</h2>
               <p> <b> CPF:  </b> {{ $aluno->cpf}}. </p>
               <p> <b> RG:  </b>{{ $aluno->rg}}. </p>
-              <p> <b> Curso:  </b>{{ $aluno->curso}}. </p>
+			  
+			@foreach($cursos as $curso )
+				@if($curso->id == $aluno->curso_id)
+				
+					<p> <b> Curso:  </b>{{$curso->nomeCurso}} </p>
+
+				@endif
+			@endforeach				  
+
               <p> <b> Data de Nascimento:  </b> {{ $aluno->dataNasc}}. </p>
               <p>  <b> CEP:  </b>{{ $aluno->cep}}.</p>
               <p>  <b> Estado:  </b>{{ $aluno->estado}}.</p>
@@ -61,7 +67,8 @@
 
 	</p>
               <hr>
-          @endforeach
+
+		  @endforeach
 
                 </div>
             </div>

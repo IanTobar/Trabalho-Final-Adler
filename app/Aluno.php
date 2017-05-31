@@ -21,5 +21,6 @@ class Aluno extends Model
 	    'telefone',
 	    'email',
 	    'sexo',
+		'curso_id',
     ];
 }
