@@ -6,11 +6,17 @@ use App\Aluno;
 use Redirect;
 use Illuminate\Http\Request;
 
+use App\Curso;
+
 class AlunosController extends Controller
 {
   public function create(){
     //Retorna a view referente ao formulario
-    return view('alunos.formulario');
+  $cursos = Curso::pluck('nomeCurso', 'id');
+		
+		return view('alunos.formulario', compact('cursos'));  
+
+    /*return view('alunos.formulario');*/
   }
 
   public function store(Request $request){
@@ -21,8 +27,8 @@ class AlunosController extends Controller
   $alunos->create($request->all());
 
   \Session::flash('mensagem_sucesso', 'Aluno cadastrado com sucesso');
-
-
+  
+  
     //Redireciona para a pagina de formualario de alunos para caso o usuário
     //queira criar outro aluno, nela deve haver um botão retorno para caso o
     //usuário queira voltar para uma certa pagina
@@ -43,7 +49,15 @@ class AlunosController extends Controller
 
   $alunos = Aluno::all();
 
-  return view('alunos.lista', ['alunos' => $alunos]);
+//		$cursos = Curso::pluck('nomeCurso', 'id');
+		
+		//return view('alunos.formulario', compact('cursos'));  
+  
+$cursos = Curso::all();
+  
+    return view('alunos.lista', ['alunos' => $alunos], ['cursos' => $cursos]);  
+  
+//  return view('alunos.lista', ['alunos' => $alunos], compact('cursos'));
 
   }
 
@@ -51,7 +65,19 @@ class AlunosController extends Controller
 
   $alunos = Aluno::all();
 
-  return view('alunos.lista', ['alunos' => $alunos]);
+//  $cursos = Curso::pluck('nomeCurso', 'id');
+
+
+
+  //return view('alunos.formulario', compact('cursos'));  
+
+$cursos = Curso::all();
+  
+    return view('alunos.lista', ['alunos' => $alunos], ['cursos' => $cursos]);
+  
+//  return view('alunos.lista', ['alunos' => $alunos], compact('cursos'));
+  
+  //return view('alunos.lista', ['alunos' => $alunos]);
 
   }
 
@@ -78,8 +104,12 @@ class AlunosController extends Controller
 
     $alunos = Aluno::findOrFail($id);
 
+	  $cursos = Curso::pluck('nomeCurso', 'id');
+		
+		return view('alunos.edicao', compact('cursos'), ['alunos' => $alunos]);  
+	
     /*Recebe a id para editar o aluno e manda o usuário para a view formulario*/
-    return view('alunos.formulario', ['alunos' => $alunos]);
+/*    return view('alunos.formulario', ['alunos' => $alunos]);*/
 
   }
 

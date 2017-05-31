@@ -37,8 +37,13 @@
 						{!! Form::input('string','rg' , null,  ['class' => 'form-control', 'placeholder' => 'rg']) !!}
 
             <!--Temporario-->
-            {!! Form::label('curso','Curso: ') !!}
-						{!! Form::input('string','curso' , null,  ['class' => 'form-control', 'placeholder' => 'curso']) !!}
+            {!! Form::label('curso_id','Curso: ') !!}
+						<br />
+						<!-- {!! Form::input('string','curso' , null,  ['class' => 'form-control', 'placeholder' => 'curso']) !!} -->
+						
+						{!! Form::select('curso_id', $cursos) !!}
+						
+						<br />
 
 						{!! Form::label('dataNasc','Data de Nascimento(dd/mm/aa):') !!}
 						{!! Form::input('string','dataNasc' , null,  ['class' => 'form-control', 'placeholder' => 'dataNasc'] ) !!}

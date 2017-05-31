@@ -33,6 +33,8 @@ Route::resource('disciplina','DisciplinasController');
 Route::resource('curso','CursosController');
 Route::resource('funcionario','FuncionariosController');
 Route::resource('aluno','AlunosController');
+Route::resource('conta','ContasController');
+Route::resource('incoming','IncomingsController');
 
 Auth::routes();
 
@@ -55,4 +57,20 @@ Route::get('/pesquisaFuncionario',[
 Route::get('/pesquisaAluno',[
     'as' => 'pesquisaAluno',
     'uses' => 'AlunosController@recebePesquisa'
+]);
+
+
+Route::get('/relatorioGastos',[
+    'as' => 'relatorioGastos',
+    'uses' => 'RelatorioGastosController@index'
+]);
+
+Route::get('/pesquisaConta',[
+    'as' => 'pesquisaConta',
+    'uses' => 'ContasController@recebePesquisa'
+]);
+
+Route::get('/pesquisaIncoming',[
+    'as' => 'pesquisaIncoming',
+    'uses' => 'IncomingsController@recebePesquisa'
 ]);
