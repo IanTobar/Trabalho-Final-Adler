@@ -18,7 +18,6 @@ class CreateAlunosTable extends Migration
             $table->string('nomeAluno');
       			$table->string('cpf');
       			$table->string('rg');
-            $table->string('curso');
       			$table->string('dataNasc');
       			$table->string('cep');
       			$table->string('estado');
@@ -30,11 +29,11 @@ class CreateAlunosTable extends Migration
       			$table->string('telefone');
       			$table->string('email');
       			$table->string('sexo');
-				
-			/*relaciona as tabelas alunos e curso*/	
+
+			/*relaciona as tabelas alunos e curso*/
 			$table->integer('curso_id')->unsigned();
-			$table->foreign('curso_id')->references('id')->on('cursos');/*chave estrangeira*/				
-				
+			$table->foreign('curso_id')->references('id')->on('cursos');/*chave estrangeira*/
+
             $table->timestamps();
         });
     }
