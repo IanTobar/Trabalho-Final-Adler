@@ -56,3 +56,9 @@ Route::get('/pesquisaAluno',[
     'as' => 'pesquisaAluno',
     'uses' => 'AlunosController@recebePesquisa'
 ]);
+
+
+Route::get('/relatorioGastos',[
+    'as' => 'relatorioGastos',
+    'uses' => 'RelatorioGastosController@index'
+]);
