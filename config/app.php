@@ -163,6 +163,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
@@ -179,6 +180,7 @@ return [
 
         // ADICIONEI PARA OS FORMS -Arthur
         Collective\Html\HtmlServiceProvider::class,
+        Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
         //-Arthur
 
     ],
@@ -233,6 +235,7 @@ return [
         //ADICIONEI PARA OS FORMS -Arthur
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Lava' => Khill\Lavacharts\Laravel\LavachartsFacade::class
         //-Arthur
 
     ],
