@@ -6,13 +6,16 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                  
+
 					<h1> Relatório de Gastos: </h1>
 
 				</div>
 
                 <div class="panel-body">
 
+                  <div id="chart-div"></div>
+
+                  @piechart('RelatorioGastosPizza', 'chart-div')
                 </div>
             </div>
         </div>
