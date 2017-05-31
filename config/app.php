@@ -177,7 +177,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        // ADICIONEI PARA O CEP
+        Artesaos\Providers\CidadesServiceProvider,
         // ADICIONEI PARA OS FORMS -Arthur
         Collective\Html\HtmlServiceProvider::class,
         Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
