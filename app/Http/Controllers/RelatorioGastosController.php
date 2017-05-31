@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Curso;
+use App\conta;
+use App\incoming;
 use Khill\Lavacharts\Lavacharts;
 use Illuminate\Http\Request;
 
@@ -10,36 +11,53 @@ class RelatorioGastosController extends Controller
 
   public function show(){
 
-    return view('cursos.lista', ['cursos' => $cursos]);
 
   }
 
   public function index(){
-
-    $cursos = Curso::get();
-    $reasons = \Lava::DataTable();
-
-    $reasons->addStringColumn('Cursos');
-    $reasons->addNumberColumn('Porcento');
-
-
-
-             foreach ($cursos as $curso) {
-            $reasons->addRow(["$curso->nomeCurso",10]);
-             }
-
-
-
-    \Lava::PieChart('RelatorioGastosPizza', $reasons, [
-        'title'  => 'Cursos',
-        'is3D'   => true,
-        
-    ]);
-
-
-
-
+      $this->GraficoComparativo();
   return view('relatorios.relatorioGastos');
+  }
+
+  public function GraficoComparativo()
+  {
+
+        $contas = Conta::get();
+        $incomings = Incoming::get();
+        $reasons = \Lava::DataTable();
+
+
+        $reasons->addStringColumn('Tipo');
+        $reasons->addNumberColumn('Valor');
+
+        $totalDespesa = 0;
+        $totalGanho = 0;
+
+
+                 foreach ($contas as $conta) {
+                    $totalDespesa += $conta->valor;
+                 }
+
+                 foreach ($incomings as $incoming) {
+                    $totalGanho += $incoming->valor;
+                 }
+
+    //$reasons->addRow([$totalDespesa,$totalGanho]);
+    $reasons->addRow(['Despesas',$totalDespesa]);
+    $reasons->addRow(['Ganhos',$totalGanho]);
+
+
+
+        \Lava::BarChart('ComparativoGastosGanhos', $reasons);
+
+        $dateRange = $lava->DateRangeFilter(int|'string', [
+        'minValue' => int|float,
+        'maxValue' => int|float,
+        'format'   => 'string'
+    ]);
+    
+$control = $lava->ControlWrapper($filter, 'control');
+$chart   = $lava->ChartWrapper($pieChart, 'chart');
 
   }
 }

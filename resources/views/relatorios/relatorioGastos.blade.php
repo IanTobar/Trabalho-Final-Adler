@@ -15,7 +15,7 @@
 
                   <div id="chart-div"></div>
 
-                  @piechart('RelatorioGastosPizza', 'chart-div')
+                  @barchart('ComparativoGastosGanhos', 'chart-div')
                 </div>
             </div>
         </div>
