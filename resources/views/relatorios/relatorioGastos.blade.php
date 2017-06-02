@@ -13,11 +13,16 @@
 
                 <div class="panel-body">
 
-                  <div id="chart-div"></div>
                   <div id="line-div"></div>
+                  <div id="my-dash">
+                  <div id="chart">
+                  </div>
+                  <div id="control">
+                  </div>
+              </div>
 
-                  @barchart('ComparativoGastosGanhos', 'chart-div')
-                  @linechart('GastosTempo', 'line-div')
+              <?= \Lava::render('Dashboard', 'GastosTempo', 'my-dash'); ?>
+                  {{-- @linechart('GastosTempo', 'line-div') --}
                 </div>
             </div>
         </div>

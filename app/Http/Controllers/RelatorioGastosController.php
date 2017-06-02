@@ -15,47 +15,11 @@ class RelatorioGastosController extends Controller
   }
 
   public function index(){
-      $this->GraficoComparativo();
       $this->GraficoGastosTempo();
 
   return view('relatorios.relatorioGastos');
   }
 
-  public function GraficoComparativo()
-  {
-
-        $contas = Conta::get();
-        $incomings = Incoming::get();
-        $reasons = \Lava::DataTable();
-
-
-        $reasons->addStringColumn('Tipo');
-        $reasons->addNumberColumn('Valor');
-
-        $totalDespesa = 0;
-        $totalGanho = 0;
-
-
-                 foreach ($contas as $conta) {
-                    $totalDespesa += $conta->valor;
-                 }
-
-                 foreach ($incomings as $incoming) {
-                    $totalGanho += $incoming->valor;
-                 }
-
-    //$reasons->addRow([$totalDespesa,$totalGanho]);
-    $reasons->addRow(['Despesas',$totalDespesa]);
-    $reasons->addRow(['Ganhos',$totalGanho]);
-
-    $formater = \Lava::NumberFormat([
-      'pattern' => 'R$#,###'
-    ]);
-
-    //$formater.format($reasons,1);
-
-        \Lava::BarChart('ComparativoGastosGanhos', $reasons);
-  }
 
   public function GraficoGastosTempo()
   {
@@ -72,8 +36,18 @@ foreach ($contas as $conta) {
 $gastos->addRow(["$conta->dataValidade",$conta->valor]);
 }
 
-\Lava::LineChart('GastosTempo', $gastos, [
-    'title' => 'Gastos Por Mês'
+$linechart = \Lava::LineChart('GastosTempo', $gastos, [
+    'title' => 'Gastos/Tempo'
 ]);
+
+$filter  = \Lava::NumberRangeFilter(1, [
+    'ui' => [
+        'labelStacking' => 'vertical'
+    ]
+]);
+$control = \Lava::ControlWrapper($filter, 'control');
+$chart   = \Lava::ChartWrapper($linechart, 'chart');
+\Lava::Dashboard('GastosTempo')->bind($control, $chart);
+
   }
 }
