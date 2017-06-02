@@ -40,14 +40,26 @@ $linechart = \Lava::LineChart('GastosTempo', $gastos, [
     'title' => 'Gastos/Tempo'
 ]);
 
-$filter  = \Lava::NumberRangeFilter(1, [
+$filtroValor  = \Lava::NumberRangeFilter(1, [
     'ui' => [
         'labelStacking' => 'vertical'
     ]
 ]);
-$control = \Lava::ControlWrapper($filter, 'control');
+
+$filtroData  = \Lava::DateRangeFilter(0, [
+    'ui' => [
+        'labelStacking' => 'vertical'
+    ]
+]);
+
+$controleData = \Lava::ControlWrapper($filtroData, 'controleData');
+$control = \Lava::ControlWrapper($filtroValor, 'control');
+
 $chart   = \Lava::ChartWrapper($linechart, 'chart');
-\Lava::Dashboard('GastosTempo')->bind($control, $chart);
+
+
+
+\Lava::Dashboard('GastosTempo')->bind([$control,$controleData], $chart);
 
   }
 }

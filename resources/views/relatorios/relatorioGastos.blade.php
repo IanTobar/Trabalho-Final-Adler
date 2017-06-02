@@ -19,6 +19,8 @@
                   </div>
                   <div id="control">
                   </div>
+                  <div id="controleData">
+                  </div>
               </div>
 
               <?= \Lava::render('Dashboard', 'GastosTempo', 'my-dash'); ?>
