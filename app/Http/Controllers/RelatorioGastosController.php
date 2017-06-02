@@ -16,6 +16,8 @@ class RelatorioGastosController extends Controller
 
   public function index(){
       $this->GraficoComparativo();
+      $this->GraficoGastosTempo();
+
   return view('relatorios.relatorioGastos');
   }
 
@@ -46,18 +48,32 @@ class RelatorioGastosController extends Controller
     $reasons->addRow(['Despesas',$totalDespesa]);
     $reasons->addRow(['Ganhos',$totalGanho]);
 
+    $formater = \Lava::NumberFormat([
+      'pattern' => 'R$#,###'
+    ]);
 
+    //$formater.format($reasons,1);
 
         \Lava::BarChart('ComparativoGastosGanhos', $reasons);
+  }
 
-        $dateRange = $lava->DateRangeFilter(int|'string', [
-        'minValue' => int|float,
-        'maxValue' => int|float,
-        'format'   => 'string'
-    ]);
-    
-$control = $lava->ControlWrapper($filter, 'control');
-$chart   = $lava->ChartWrapper($pieChart, 'chart');
+  public function GraficoGastosTempo()
+  {
+$contas = Conta::orderBy('dataValidade', 'ASC')->get();
+$gastos = \Lava::DataTable();
 
+$gastos->addDateColumn('Data');
+$gastos->addNumberColumn('Valor');
+$gastos->setDateTimeFormat('j/m/Y');
+
+
+
+foreach ($contas as $conta) {
+$gastos->addRow(["$conta->dataValidade",$conta->valor]);
+}
+
+\Lava::LineChart('GastosTempo', $gastos, [
+    'title' => 'Gastos Por Mês'
+]);
   }
 }

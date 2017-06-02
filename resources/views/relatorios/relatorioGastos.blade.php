@@ -14,8 +14,10 @@
                 <div class="panel-body">
 
                   <div id="chart-div"></div>
+                  <div id="line-div"></div>
 
                   @barchart('ComparativoGastosGanhos', 'chart-div')
+                  @linechart('GastosTempo', 'line-div')
                 </div>
             </div>
         </div>
