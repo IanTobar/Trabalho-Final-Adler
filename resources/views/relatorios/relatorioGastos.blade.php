@@ -17,17 +17,20 @@
                   <div id="my-dash">
                   <div id="chart">
                   </div>
-                  <div id="control">
-                  </div>
-                  <div id="controleData">
-                  </div>
+
+               <div id="control" class="pull-left"></div>
+                <div id="controleData" class="pull-right"></div>
+
               </div>
 
-              <?= \Lava::render('Dashboard', 'GastosTempo', 'my-dash'); ?>
-                  {{-- @linechart('GastosTempo', 'line-div') --}
+
+
+              <div>Média = {{$media}}</div>
                 </div>
+
             </div>
         </div>
     </div>
 </div>
+<?= \Lava::render('Dashboard', 'GastosTempo', 'my-dash'); ?>
 @endsection

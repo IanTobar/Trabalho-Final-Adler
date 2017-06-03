@@ -16,8 +16,15 @@ class RelatorioGastosController extends Controller
 
   public function index(){
       $this->GraficoGastosTempo();
+      $contas = Conta::get();
+      $total = 0;
+      $numeroElementos =count($contas,0);
+        foreach ($contas as $conta) {
+          $total += $conta->valor;
+        }
+        $total = $total/$numeroElementos;
 
-  return view('relatorios.relatorioGastos');
+  return view('relatorios.relatorioGastos',['media' => $total]);
   }
 
 
@@ -54,7 +61,6 @@ $filtroData  = \Lava::DateRangeFilter(0, [
 
 $controleData = \Lava::ControlWrapper($filtroData, 'controleData');
 $control = \Lava::ControlWrapper($filtroValor, 'control');
-
 $chart   = \Lava::ChartWrapper($linechart, 'chart');
 
 
