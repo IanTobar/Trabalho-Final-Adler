@@ -12,7 +12,7 @@
 				</div>
 
                 <div class="panel-body">
-
+<div id="bancos-div"> </div>
                   <div id="line-div"></div>
                   <div id="my-dash">
                   <div id="chart">
@@ -23,14 +23,25 @@
 
               </div>
 
+</div>
 
 
-              <div>Média = {{$media}}</div>
+                                  <div class="panel-heading">
+                                    <h1>Detalhes:</h1>
+                                  </div>
+                <div class="panel-body">
+                  Média = R${{$media}}.
+                  <br>
+                  Gastos Totais = R${{$total}}.
+                  <br>
+                  Número de Contas = {{$numeroElementos}} contas.
+
                 </div>
 
-            </div>
+
         </div>
     </div>
 </div>
 <?= \Lava::render('Dashboard', 'GastosTempo', 'my-dash'); ?>
+@piechart('GraficoBancos', 'bancos-div')
 @endsection

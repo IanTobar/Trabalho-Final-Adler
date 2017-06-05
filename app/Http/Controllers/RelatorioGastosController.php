@@ -22,9 +22,9 @@ class RelatorioGastosController extends Controller
         foreach ($contas as $conta) {
           $total += $conta->valor;
         }
-        $total = $total/$numeroElementos;
+        $media = $total/$numeroElementos;
 
-  return view('relatorios.relatorioGastos',['media' => $total]);
+  return view('relatorios.relatorioGastos',['total' => $total, 'media' => $media, 'numeroElementos' => $numeroElementos]);
   }
 
 
@@ -32,6 +32,11 @@ class RelatorioGastosController extends Controller
   {
 $contas = Conta::orderBy('dataValidade', 'ASC')->get();
 $gastos = \Lava::DataTable();
+$bancos = \Lava::DataTable();
+
+$bancos->addStringColumn('Bancos')
+    ->addNumberColumn('Porcentagem');
+
 
 $gastos->addDateColumn('Data');
 $gastos->addNumberColumn('Valor');
@@ -41,6 +46,7 @@ $gastos->setDateTimeFormat('j/m/Y');
 
 foreach ($contas as $conta) {
 $gastos->addRow(["$conta->dataValidade",$conta->valor]);
+$bancos->addRow(["$conta->nomeBanco",10]);
 }
 
 $linechart = \Lava::LineChart('GastosTempo', $gastos, [
@@ -67,5 +73,12 @@ $chart   = \Lava::ChartWrapper($linechart, 'chart');
 
 \Lava::Dashboard('GastosTempo')->bind([$control,$controleData], $chart);
 
+
+\Lava::PieChart('GraficoBancos', $bancos, [
+'title'  => 'Bancos Utilizados',
+'is3D'   => true,
+]);
+
   }
+
 }
