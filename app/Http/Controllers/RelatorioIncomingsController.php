@@ -6,7 +6,7 @@ use App\incoming;
 use Khill\Lavacharts\Lavacharts;
 use Illuminate\Http\Request;
 
-class RelatorioGastosController extends Controller
+class RelatorioIncomingsController extends Controller
 {
 
   public function show(){
@@ -16,7 +16,7 @@ class RelatorioGastosController extends Controller
 
   public function index(){
       $this->GraficoGastosTempo();
-      $contas = Conta::get();
+      $contas = Incoming::get();
       $total = 0;
       $numeroElementos =count($contas,0);
         foreach ($contas as $conta) {
@@ -24,13 +24,13 @@ class RelatorioGastosController extends Controller
         }
         $media = $total/$numeroElementos;
 
-  return view('relatorios.relatorioGastos',['total' => $total, 'media' => $media, 'numeroElementos' => $numeroElementos]);
+  return view('relatorios.RelatorioIncomings',['total' => $total, 'media' => $media, 'numeroElementos' => $numeroElementos]);
   }
 
 
   public function GraficoGastosTempo()
   {
-$contas = Conta::orderBy('dataValidade', 'ASC')->get();
+$contas = Incoming::orderBy('dataValidade', 'ASC')->get();
 $gastos = \Lava::DataTable();
 $bancos = \Lava::DataTable();
 
@@ -46,11 +46,11 @@ $gastos->setDateTimeFormat('j/m/Y');
 
 foreach ($contas as $conta) {
 $gastos->addRow(["$conta->dataValidade",$conta->valor]);
-$bancos->addRow([$conta->nomeBanco,1]);
+$bancos->addRow(["$conta->nomeBanco",10]);
 }
 
 $linechart = \Lava::LineChart('GastosTempo', $gastos, [
-    'title' => 'Gastos/Tempo'
+    'title' => 'Ganhos/Tempo'
 ]);
 
 $filtroValor  = \Lava::NumberRangeFilter(1, [

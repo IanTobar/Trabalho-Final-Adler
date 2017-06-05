@@ -64,6 +64,12 @@ Route::get('/relatorioGastos',[
     'as' => 'relatorioGastos',
     'uses' => 'RelatorioGastosController@index'
 ]);
+Route::get('/relatorioGanhos',[
+    'as' => 'relatorioGanhos',
+    'uses' => 'RelatorioIncomingsController@index'
+]);
+
+
 
 Route::get('/pesquisaConta',[
     'as' => 'pesquisaConta',

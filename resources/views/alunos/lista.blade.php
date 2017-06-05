@@ -6,19 +6,26 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-					<a class= "pull-right btn btn-primary"   href = "{{url('aluno/create')}}" >Novo Aluno</a>
+                  <table class = "pull-right">
+                    <tr>
+                      <td>
+                  <a class= "pull-right btn btn-primary"   href = "{{url('aluno/create')}}" >Novo Aluno</a>
+                </td>
+                <tr>
+                <td>
+
+                  <p style = "margin-top: 10px"> <a class= "pull-right btn btn-primary"   href = "{{url('aluno/show')}}" >Listar Todos</a> </p>
+                </td>
+              </tr>
+              </tr>
+        </table>
 						<h1> Alunos: </h1>
-
+            <form action = "{{route('pesquisaAluno')}}" method="GET"> <!-- FORMULÁRIO DE PESQUISA -->
+              <input name ='nomeAluno' type="text">
+              <input type="submit" value ="Pesquisar" class ="btn btn-primary">
+            </form>
+            </div>
 					</div>
-
-
-					<h1> Alunos: </h1>
-          <form action = "{{route('pesquisaAluno')}}" method="GET"> <!-- FORMULÁRIO DE PESQUISA -->
-            <input name ='nomeAluno' type="text">
-            <input type="submit" value ="Pesquisar" class ="btn btn-primary">
-          </form>
-
-				</div>
 
                 <div class="panel-body">
 					<!-- A variavel mensagem_sucesso foi criada no controller CursosController*/ -->
@@ -28,21 +35,21 @@
 						<div class = "alert alert-success">{{Session::get('mensagem_sucesso')}}</div>
 
 					@endif
-							
+
           @foreach($alunos as $aluno)
-			
-  
+
+
               <h2>{{ $aluno->nomeAluno }}</h2>
               <p> <b> CPF:  </b> {{ $aluno->cpf}}. </p>
               <p> <b> RG:  </b>{{ $aluno->rg}}. </p>
-			  
+
 			@foreach($cursos as $curso )
 				@if($curso->id == $aluno->curso_id)
-				
+
 					<p> <b> Curso:  </b>{{$curso->nomeCurso}} </p>
 
 				@endif
-			@endforeach				  
+			@endforeach
 
               <p> <b> Data de Nascimento:  </b> {{ $aluno->dataNasc}}. </p>
               <p>  <b> CEP:  </b>{{ $aluno->cep}}.</p>
