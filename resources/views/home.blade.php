@@ -26,8 +26,8 @@
 <div class="panel panel-success">
   <div class="panel-heading"><h3>Relatórios</div>
   <div class="panel-body">
+    <a href="{{'relatorioGanhos'}}" class="btn btn-success">Relatório de Ganhos</a>
         <a href="{{'relatorioGastos'}}" class="btn btn-success">Relatório de Gastos</a>
-        <a href="{{'relatorioGanhos'}}" class="btn btn-success">Relatório de Ganhos</a>
 </div>
 </div>
 
