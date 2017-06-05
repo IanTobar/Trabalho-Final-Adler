@@ -43,5 +43,5 @@
     </div>
 </div>
 <?= \Lava::render('Dashboard', 'GastosTempo', 'my-dash'); ?>
-@piechart('GraficoBancos', 'bancos-div')
+<!--@piechart('GraficoBancos', 'bancos-div')-->
 @endsection

@@ -50,7 +50,7 @@ $bancos->addRow(["$conta->nomeBanco",10]);
 }
 
 $linechart = \Lava::LineChart('GastosTempo', $gastos, [
-    'title' => 'Gastos/Tempo'
+    'title' => 'Ganhos/Tempo'
 ]);
 
 $filtroValor  = \Lava::NumberRangeFilter(1, [

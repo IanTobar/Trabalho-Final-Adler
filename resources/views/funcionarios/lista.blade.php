@@ -6,7 +6,19 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                  <a class= "pull-right btn btn-primary"   href = "{{url('funcionario/create')}}" >Novo Funcionario</a>
+                  <table class = "pull-right">
+                    <tr>
+                      <td>
+                  <a class= "pull-right btn btn-primary"   href = "{{url('funcionario/create')}}" >Novo Funcionário</a>
+                </td>
+                <tr>
+                <td>
+
+                  <p style = "margin-top: 10px"> <a class= "pull-right btn btn-primary"   href = "{{url('funcionario/show')}}" >Listar Todos</a> </p>
+                </td>
+              </tr>
+              </tr>
+</table>
 
 
 

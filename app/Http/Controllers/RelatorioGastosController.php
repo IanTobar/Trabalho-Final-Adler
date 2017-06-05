@@ -46,7 +46,7 @@ $gastos->setDateTimeFormat('j/m/Y');
 
 foreach ($contas as $conta) {
 $gastos->addRow(["$conta->dataValidade",$conta->valor]);
-$bancos->addRow(["$conta->nomeBanco",10]);
+$bancos->addRow([$conta->nomeBanco,1]);
 }
 
 $linechart = \Lava::LineChart('GastosTempo', $gastos, [
