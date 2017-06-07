@@ -12,14 +12,12 @@
 				</div>
 
                 <div class="panel-body">
-<div id="bancos-div"> </div>
+                  <div id="bancos-div"> </div>
                   <div id="line-div"></div>
                   <div id="my-dash">
                   <div id="chart">
                   </div>
-
-               <div id="control" class="pull-left"></div>
-                <div id="controleData" class="pull-right"></div>
+                <div id="controleData"></div>
 
               </div>
 
@@ -29,6 +27,5 @@
         </div>
     </div>
 </div>
-
-@combochart('GraficoComparativo', 'chart')
+<?= \Lava::render('Dashboard', 'Comparativo', 'my-dash'); ?>
 @endsection
