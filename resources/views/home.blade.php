@@ -28,6 +28,7 @@
   <div class="panel-body">
     <a href="{{'relatorioGanhos'}}" class="btn btn-success">Relatório de Ganhos</a>
         <a href="{{'relatorioGastos'}}" class="btn btn-success">Relatório de Gastos</a>
+        <a href="{{'relatorioComparativo'}}" class="btn btn-success">Relatório Comparativo</a>
 </div>
 </div>
 
