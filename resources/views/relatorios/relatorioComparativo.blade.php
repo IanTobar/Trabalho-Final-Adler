@@ -8,7 +8,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
 
-					<h1 class="animated fadeIn"> Relatório de Gastos: </h1>
+
+          <h1 class="animatedLong fadeIn"> Relatório de Gastos: </h1>
 
 				</div>
 
@@ -16,9 +17,9 @@
                   <div id="bancos-div"> </div>
                   <div id="line-div"></div>
                   <div id="my-dash">
-                  <div id="chart">
+                  <div class="animatedLong delay1 fadeIn" id="chart">
                   </div>
-                <div id="controleData" ></div>
+                <div class="animatedLong delay2 fadeIn" id="controleData" ></div>
 
               </div>
 

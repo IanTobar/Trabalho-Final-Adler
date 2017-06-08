@@ -5,12 +5,31 @@
  * Version - 3.5.2
  * Licensed under the MIT license - http://opensource.org/licenses/MIT
  *
- * Copyright (c) 2017 Daniel Eden
+ * Copyright (c) 2017 Daniel Eden, Editado por Arthur Leão
  */
 
 .animated {
   animation-duration: 1s;
   animation-fill-mode: both;
+}
+
+
+.animatedLong {
+  animation-duration: 3s;
+  animation-fill-mode: both;
+}
+
+.delay1 {
+  animation-delay: 1s;
+}
+.delay15 {
+  animation-delay: 1.5s;
+}
+.delay2 {
+  animation-delay: 2s;
+}
+.delay3 {
+  animation-delay: 3s;
 }
 
 .animated.infinite {
