@@ -69,6 +69,10 @@ Route::get('/relatorioGanhos',[
     'uses' => 'RelatorioIncomingsController@index'
 ]);
 
+Route::get('/relatorioComparativo',[
+    'as' => 'relatorioComparativo',
+    'uses' => 'RelatorioComparativoController@index'
+]);
 
 
 Route::get('/pesquisaConta',[
