@@ -8,8 +8,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
 
-					<h1> Relatório de Gastos: </h1>
-<div id="test"> TESTE </div>
+					<h1 class="animated fadeIn"> Relatório de Gastos: </h1>
+
 				</div>
 
                 <div class="panel-body">
