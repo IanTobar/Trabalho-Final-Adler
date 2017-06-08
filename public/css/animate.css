@@ -15,10 +15,14 @@
 
 
 .animatedLong {
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-fill-mode: both;
 }
 
+
+.delay05 {
+  animation-delay: 0.5s;
+}
 .delay1 {
   animation-delay: 1s;
 }
