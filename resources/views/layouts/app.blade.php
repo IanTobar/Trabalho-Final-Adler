@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <style>
     #nav {
-      background-image: url('img/navbar.png');
+      background-image: url('{{asset('img/navbar.png')}}');
       background-repeat:no-repeat;
     }
        </style>
