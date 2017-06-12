@@ -9,26 +9,28 @@
                   <table class = "pull-right">
                     <tr>
                       <td>
-                  <a class= "pull-right btn btn-primary"   href = "{{url('conta/create')}}" >Nova Conta</a>
+                  <a class= "pull-right btn btn-primary animatedLong delay15 fadeIn"   href = "{{url('conta/create')}}" >Nova Conta</a>
                 </td>
                 <tr>
                 <td>
 
-                  <p style = "margin-top: 10px"> <a class= "pull-right btn btn-primary"   href = "{{url('conta/show')}}" >Listar Todas</a> </p>
+                  <p style = "margin-top: 10px"> <a class= "pull-right btn btn-primary animatedLong delay2 fadeIn"   href = "{{url('conta/show')}}" >Listar Todas</a> </p>
                 </td>
               </tr>
               </tr>
 </table>
 
 
-					<h1> Contas a Pagar </h1>
+					<h1 class="animatedLong fadeIn"> Contas a Pagar </h1>
+          <div class="animatedLong delay2 fadeIn">
           <form action = "{{route('pesquisaConta')}}" method="GET"> <!-- FORcontasPESQUISA -->
             <input name ='nomeBeneficiario' type="text">
             <input type="submit" value ="Pesquisar" class ="btn btn-primary">
         </form>
+      </div>
 				</div>
 
-                <div class="panel-body">
+                <div class="panel-body animatedLong delay1 fadeIn">
 					<!-- A variavel mensagem_sucesso foi criada no controller contaController*/ -->
 					@if(Session::has('mensagem_sucesso'))
 

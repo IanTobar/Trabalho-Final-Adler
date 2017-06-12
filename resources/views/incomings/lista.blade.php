@@ -9,26 +9,28 @@
                   <table class = "pull-right">
                     <tr>
                       <td>
-                  <a class= "pull-right btn btn-primary"   href = "{{url('incoming/create')}}" >Nova Conta</a>
+                  <a class= "pull-right btn btn-primary animatedLong fadeIn delay15"   href = "{{url('incoming/create')}}" >Nova Conta</a>
                 </td>
                 <tr>
                 <td>
 
-                  <p style = "margin-top: 10px"> <a class= "pull-right btn btn-primary"   href = "{{url('incoming/show')}}" >Listar Todas</a> </p>
+                  <p style = "margin-top: 10px"> <a class= "pull-right btn btn-primary animatedLong fadeIn delay2"   href = "{{url('incoming/show')}}" >Listar Todas</a> </p>
                 </td>
               </tr>
               </tr>
 </table>
 
 
-					<h1> Contas a Receber </h1>
+					<h1 class="animatedLong fadeIn"> Contas a Receber </h1>
+          <div class="animatedLong fadeIn delay15">
           <form action = "{{route('pesquisaIncoming')}}" method="GET"> <!-- FORincomingsPESQUISA -->
             <input name ='nomeIntermediario' type="text">
             <input type="submit" value ="Pesquisar" class ="btn btn-primary">
         </form>
 				</div>
+      </div>
 
-                <div class="panel-body">
+                <div class="panel-body animatedLong fadeIn delay1">
 					<!-- A variavel mensagem_sucesso foi criada no controller incomingController*/ -->
 					@if(Session::has('mensagem_sucesso'))
 

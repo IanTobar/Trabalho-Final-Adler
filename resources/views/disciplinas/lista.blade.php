@@ -9,27 +9,29 @@
                   <table class = "pull-right">
                     <tr>
                       <td>
-                  <a class= "pull-right btn btn-primary"   href = "{{url('disciplina/create')}}" >Nova Disciplina</a>
+                  <a class= "pull-right btn btn-primary animatedLong fadeIn delay15"   href = "{{url('disciplina/create')}}" >Nova Disciplina</a>
                   </td>
                   <tr>
                   <td>
 
-                  <p style = "margin-top: 10px"> <a class= "pull-right btn btn-primary"   href = "{{url('disciplina/show')}}" >Listar Disciplina</a> </p>
+                  <p style = "margin-top: 10px"> <a class= "pull-right btn btn-primary animatedLong fadeIn delay2"   href = "{{url('disciplina/show')}}" >Listar Disciplina</a> </p>
                   </td>
                   </tr>
                   </tr>
                   </table>
 
 
-					<h1>Disciplinas:</h1>
+					<h1 class="animatedLong fadeIn">Disciplinas:</h1>
+          <div class="animatedLong fadeIn delay15">
           <form action = "{{route('pesquisaDisciplina')}}" method="GET"> <!-- FORMULÁRIO DE PESQUISA -->
             <input name ='nomeDisciplina' type="text">
             <input type="submit" value ="Pesquisar" class ="btn btn-primary">
         </form>
 				</div>
+      </div>
 
 
-                <div class="panel-body">
+                <div class="panel-body animatedLong fadeIn delay1">
 					<!-- A variavel mensagem_sucesso foi criada no controller CursosController*/ -->
 					@if(Session::has('mensagem_sucesso'))
 
