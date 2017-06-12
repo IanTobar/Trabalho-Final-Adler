@@ -3,41 +3,80 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-offset-1">
 
                 <div class="panel-group" style="text-align: center;">
-
-                  <div style="width: 800px; height: 200px;" class="panel panel-info animatedLong fadeIn">
+                  <table>
+                    <tr>
+                      <td style="padding: 8px;">
+                  <div class="panel panel-info animatedLong fadeIn">
   <div class="panel-heading animatedLong fadeInDown" style="text-align: center;"><i class="material-icons" style="font-size:50px;">school</i><h3>Controle Escolar</div>
 
   <div class="panel-body animatedLong fadeInDown" style="text-align: center;">
-    <a href="{{'curso/show'}}" class="btn btn-primary">Cursos</a>
-    <a href="{{'disciplina/show'}}" class="btn btn-primary">Disciplinas</a>
-    <a href="{{'funcionario/show'}}" class="btn btn-primary">Funcionários</a>
-    <a href="{{'aluno/show'}}" class="btn btn-primary">Alunos</a>
+    <table>
+      <tr>
+    <td style="padding: 8px;"> <a href="{{'curso/show'}}" class="btn btn-primary" style="width: 200px;">Cursos</a> </td>
+    <td> <a href="{{'disciplina/show'}}" class="btn btn-primary" style="width: 200px;">Disciplinas</a> </td>
+      </tr>
+  <tr>
+    <td><a href="{{'funcionario/show'}}" class="btn btn-primary" style="width: 200px;">Funcionários</a></td>
+    <td><a href="{{'aluno/show'}}" class="btn btn-primary" style="width: 200px;">Alunos</a></td>
+  </table>
 </div>
 </div>
 
-<div style="float:right; width: 400px; height: 260px;" class="panel panel-success animatedLong fadeInRight">
-  <div  class="panel-heading animatedLong fadeInRight"><i class="material-icons" style="font-size:50px;">event_note</i><h3>Relatórios</div>
+</td>
+<td>
+
+<div class="panel panel-success animatedLong fadeInDown">
+  <div  class="panel-heading animatedLong fadeInDown"><i class="material-icons" style="font-size:50px;">event_note</i><h3>Relatórios</div>
   <div class="panel-body">
-    <a href="{{'relatorioGanhos'}}" class="btn btn-success">Relatório de Ganhos</a>
-        <a href="{{'relatorioGastos'}}" class="btn btn-success">Relatório de Gastos</a>
-        <br>
-        <br>
-        <a href="{{'relatorioComparativo'}}" class="btn btn-success">Relatório Comparativo</a>
+    <table>
+      <tr>
+        <td style="padding: 8px;"><a href="{{'relatorioGanhos'}}" class="btn btn-success" style="width: 200px;">Relatório de Ganhos</a></td>
+        <td><a href="{{'relatorioGastos'}}" class="btn btn-success" style="width: 200px;">Relatório de Gastos</a></td>
+      </tr>
+      <tr>
+        <td><a href="{{'relatorioComparativo'}}" class="btn btn-success" style="width: 200px;">Relatório Comparativo</a></td>
+      </tr>
+    </table>
 </div>
 </div>
 
-
-<div style="float:left; width: 300px; height: 260px;" class="panel panel-info animatedLong fadeInLeft">
-  <div style="text-align: center;" class="panel-heading animatedLong fadeInLeft"><i class="material-icons" style="font-size:50px;">trending_up</i><h3>Finanças</h3></div>
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px;">
+<div  class="panel panel-info animatedLong fadeInUp">
+  <div style="text-align: center;" class="panel-heading animatedLong fadeInUp"><i class="material-icons" style="font-size:50px;">trending_up</i><h3>Finanças</h3></div>
   <div class="panel-body" style="text-align: center;">
-    <a href="{{'incoming/show'}}" class="btn btn-primary">Contas a Receber</a>
-    <a href="{{'conta/show'}}" class="btn btn-primary">Contas a Pagar</a>
+    <table>
+      <tr>
+    <td style="padding: 8px;"><a href="{{'incoming/show'}}" class="btn btn-primary" style="width: 200px;">Contas a Receber</a></td>
+    <td><a href="{{'conta/show'}}" class="btn btn-primary" style="width: 200px;">Contas a Pagar</a></td>
+  </tr>
+</table>
   </div>
 </div>
+</td>
 
+<td>
+<div  class="panel panel-info animatedLong fadeInUp">
+<div style="text-align: center;" class="panel-heading animatedLong fadeInUp"><i class="material-icons" style="font-size:50px;">trending_up</i><h3>Estoque</h3></div>
+<div class="panel-body" style="text-align: center;">
+  <table>
+    <tr>
+  <td style="padding: 8px;">
+  <a href="{{''}}" class="btn btn-primary" style="width: 200px;">Estoque</a></td>
+  <td><a href="{{''}}" class="btn btn-primary" style="width: 200px;">Estoque</a></td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+
+</tr>
+</table>
             </div>
         </div>
     </div>
