@@ -13,22 +13,35 @@ class RelatorioComparativoController extends Controller
 
 public function index()
 {
+  $contas = Conta::orderBy('dataValidade', 'ASC')->get();
+  $incomings = Incoming::orderBy('dataValidade', 'ASC')->get();
+
 
             $totalDespesa = 0;
             $totalGanho = 0;
+            $saldo = 0;
 
-/*
                      foreach ($contas as $conta) {
                         $totalDespesa += $conta->valor;
+                        $dataFinalConta = $conta->dataValidade;
                      }
 
                      foreach ($incomings as $incoming) {
                         $totalGanho += $incoming->valor;
+                        $dataFinalDespesa = $incoming->dataValidade;
                      }
-                     */
+
+$data1 = date_create_from_format('j/m/Y', $dataFinalConta);
+$data2 = date_create_from_format('j/m/Y', $dataFinalDespesa);
+
+if ($data1 < $data2)
+$data1 = $data2;
+
+                     $saldo = $totalGanho-$totalDespesa;
+
                      $this->GraficoComparativo();
-  return view('relatorios.relatorioComparativo');
-  //return view('relatorios.RelatorioIncomings',['total' => $total, 'media' => $media, 'numeroElementos' => $numeroElementos]);
+  return view('relatorios.relatorioComparativo',['saldoFinal' => $saldo, 'dataFinal' => $data1]);
+
 }
     public function GraficoComparativo()
     {
@@ -86,7 +99,7 @@ $comparativo->addRow(["$key",$value[0],$value[1],$value[1]-$value[0]]);
 
 
 $GraficoComparativo = \Lava::ComboChart('GraficoComparativo', $comparativo, [
-    'title' => 'Company Performance',
+    'title' => 'Gráfico Comparativo',
     'titleTextStyle' => [
         'color'    => 'rgb(123, 65, 89)',
         'fontSize' => 16
