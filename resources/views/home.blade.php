@@ -67,8 +67,8 @@
   <table>
     <tr>
   <td style="padding: 8px;">
-  <a href="{{''}}" class="btn btn-primary" style="width: 200px;">Estoque</a></td>
-  <td><a href="{{''}}" class="btn btn-primary" style="width: 200px;">Estoque</a></td>
+  <a href="{{'estoque/show'}}" class="btn btn-primary" style="width: 200px;">Produtos</a></td>
+  
 </tr>
 </table>
 </div>
