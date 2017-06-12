@@ -43,19 +43,55 @@ class EstoqueController extends Controller
 
   public function show(){
 
-  $estoques = Estoque::all();
+    $estoques = Estoque::all();
+    $acabando = array();
+    $acabaram = array();
+    $acabaramB = false;
+    $acabandoB = false;
 
-  return view('estoques.lista', ['estoques' => $estoques]);
-
+    foreach ($estoques as $estoque) {
+      if ($estoque->quantidade <= 0) {
+        $acabaram["$estoque->nomeProduto"][0] = $estoque->minimo;
+        $acabaramB = true;
+      }
+      else if (($estoque->quantidade)/2 <= $estoque->minimo) {
+        $acabando["$estoque->nomeProduto"][0] = $estoque->quantidade;
+        $acabando["$estoque->nomeProduto"][1] = $estoque->minimo;
+        $acabandoB = true;
+      }
+    }
+    return view('estoques.lista', [
+      'estoques' => $estoques,
+      'acabando' => $acabando,
+      'acabandoB' => $acabandoB,
+      'acabaramB' => $acabaramB,
+      'acabaram' => $acabaram
+      ]);
   }
 
   public function index(){
 
   $estoques = Estoque::all();
+  $acabando = array();
+  $acabaram = array();
 
-  return view('estoques.lista', ['estoques' => $estoques]);
-
+  foreach ($estoques as $estoque) {
+    if (true) {
+      $acabaram["$quantidade->nomeProduto"][0] = $quantidade->minimo;
+      $acabouSim = true;
+    }
+    else if (($estoque->quantidade)/2 <= $estoque->minimo) {
+      $acabando["$estoque->nomeProduto"][0] = $estoque->quantidade;
+      $acabando["$estoque->nomeProduto"][1] = $estoque->minimo;
+    }
   }
+  return view('estoques.lista', [
+    'estoques' => $estoques,
+    'acabando' => $acabando,
+    'acabouSim' => $acabouSim,
+    'acabaram' => $acabaram
+    ]);
+}
 
 
   public function destroy($id){

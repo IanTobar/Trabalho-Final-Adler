@@ -38,6 +38,28 @@
 
 					@endif
 
+          	@if ($acabandoB)
+          	  <div class = "alert alert-warning animatedLong fadeInDown">
+<h3> Os seguintes Produtos estão acabando: </h3>
+@foreach ($acabando as $key => $value)
+  <p> <b> {{$key}} <b> :{{$value[0]}}/{{$value[1]}} </p>
+@endforeach
+
+              </div>
+          	@endif
+
+
+                      	@if ($acabaramB)
+                      	  <div class = "alert alert-danger animatedLong fadeInDown">
+            <h3> Os seguintes Produtos ACABARAM: </h3>
+            @foreach ($acabaram as $key => $value)
+              <p> <b> {{$key}} <b> : 0/{{$value[0]}} </p>
+            @endforeach
+
+                          </div>
+                      	@endif
+
+
 
                   @foreach($estoques as $estoque)
               <h2>{{ $estoque->nomeProduto }}</h2>
