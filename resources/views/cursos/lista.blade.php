@@ -9,26 +9,27 @@
                   <table class = "pull-right">
                     <tr>
                       <td>
-                  <a class= "pull-right btn btn-primary"   href = "{{url('curso/create')}}" >Novo Curso</a>
+                  <a class= "pull-right btn btn-primary animatedLong delay2 fadeIn"   href = "{{url('curso/create')}}" >Novo Curso</a>
                 </td>
                 <tr>
                 <td>
 
-                  <p style = "margin-top: 10px"> <a class= "pull-right btn btn-primary"   href = "{{url('curso/show')}}" >Listar Todos</a> </p>
+                  <p style = "margin-top: 10px"> <a class= "pull-right btn btn-primary animatedLong delay1 fadeIn"   href = "{{url('curso/show')}}" >Listar Todos</a> </p>
                 </td>
               </tr>
               </tr>
 </table>
 
 
-					<h1> Cursos </h1>
-          <form action = "{{route('pesquisaCurso')}}" method="GET"> <!-- FORMULÁRIO DE PESQUISA -->
+					<h1 class="animatedLong fadeIn"> Cursos </h1>
+<div class="animatedLong delay15 fadeIn">          <form action = "{{route('pesquisaCurso')}}" method="GET"> <!-- FORMULÁRIO DE PESQUISA -->
             <input name ='nomeCurso' type="text">
             <input type="submit" value ="Pesquisar" class ="btn btn-primary">
         </form>
+      </div>
 				</div>
 
-                <div class="panel-body">
+                <div class="panel-body animatedLong delay1 fadeIn">
 					<!-- A variavel mensagem_sucesso foi criada no controller CursosController*/ -->
 					@if(Session::has('mensagem_sucesso'))
 

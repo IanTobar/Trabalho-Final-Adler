@@ -9,12 +9,12 @@
                   <table class = "pull-right">
                     <tr>
                       <td>
-                  <a class= "pull-right btn btn-primary"   href = "{{url('funcionario/create')}}" >Novo Funcionário</a>
+                  <a class= "pull-right btn btn-primary animatedLong fadeIn delay15"   href = "{{url('funcionario/create')}}" >Novo Funcionário</a>
                 </td>
                 <tr>
                 <td>
 
-                  <p style = "margin-top: 10px"> <a class= "pull-right btn btn-primary"   href = "{{url('funcionario/show')}}" >Listar Todos</a> </p>
+                  <p style = "margin-top: 10px"> <a class= "pull-right btn btn-primary animatedLong fadeIn delay2"   href = "{{url('funcionario/show')}}" >Listar Todos</a> </p>
                 </td>
               </tr>
               </tr>
@@ -22,15 +22,16 @@
 
 
 
-					<h1> Funcionarios: </h1>
+					<h1 class="animatedLong fadeIn"> Funcionarios: </h1>
+          <div class="animatedLong fadeIn delay15">
           <form action = "{{route('pesquisaFuncionario')}}" method="GET"> <!-- FORMULÁRIO DE PESQUISA -->
             <input name ='nomeFuncionario' type="text">
             <input type="submit" value ="Pesquisar" class ="btn btn-primary">
           </form>
-
+</div>
 				</div>
 
-                <div class="panel-body">
+                <div class="panel-body animatedLong fadeIn delay1">
 					<!-- A variavel mensagem_sucesso foi criada no controller CursosController*/ -->
 					@if(Session::has('mensagem_sucesso'))
 

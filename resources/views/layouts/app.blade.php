@@ -13,17 +13,27 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+    #nav {
+      background-image: url('{{asset('img/navbar.png')}}');
+      background-repeat:no-repeat;
+    }
+       </style>
+
 
 
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
+        <nav id="nav" class="navbar navbar-default navbar-static-top">
+            <div class="container" >
+                <div class="navbar-header" >
 
 
-<a href="{{ url('/') }}"> {{ Html::image('img/logo.jpg', 'E.A.L.T', array( 'width' => 200, 'height' => 120 )) }} </a>
+<a href="{{ url('/') }}"> {{ Html::image('img/logo.png', 'E.A.L.T', array( 'width' => 200, 'height' => 120 )) }} </a>
+<br>
+<br>
                     <!-- Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                         <span class="sr-only">Toggle Navigation</span>
@@ -42,7 +52,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right" style="background-color: white;">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Logar</a></li>
