@@ -19,6 +19,8 @@ class RelatorioGastosController extends Controller
       $contas = Conta::get();
       $total = 0;
       $numeroElementos =count($contas,0);
+      
+
         foreach ($contas as $conta) {
           $total += $conta->valor;
         }
@@ -44,10 +46,28 @@ $gastos->setDateTimeFormat('j/m/Y');
 
 
 
-foreach ($contas as $conta) {
-$gastos->addRow(["$conta->dataValidade",$conta->valor]);
-$bancos->addRow([$conta->nomeBanco,1]);
-}
+$arrayComparativo = array();
+
+
+                           foreach ($contas as $conta) {
+
+                             $data = $conta->dataValidade;
+                             if (array_key_exists("$data", $arrayComparativo))
+                             {
+                               $valor = $arrayComparativo["$data"][0];
+                             }
+                             else {
+                               $valor = 0;
+                             }
+                             $valor += $conta->valor;
+                              $arrayComparativo["$data"] = array($valor,0);
+                           }
+
+                           foreach ($arrayComparativo as $key => $value) {
+
+                           $gastos->addRow(["$key",$value[0]]);
+                           }
+
 
 $linechart = \Lava::LineChart('GastosTempo', $gastos, [
     'title' => 'Gastos/Tempo'
