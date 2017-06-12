@@ -35,6 +35,7 @@ Route::resource('funcionario','FuncionariosController');
 Route::resource('aluno','AlunosController');
 Route::resource('conta','ContasController');
 Route::resource('incoming','IncomingsController');
+Route::resource('estoque','EstoqueController');
 
 Auth::routes();
 
@@ -83,4 +84,9 @@ Route::get('/pesquisaConta',[
 Route::get('/pesquisaIncoming',[
     'as' => 'pesquisaIncoming',
     'uses' => 'IncomingsController@recebePesquisa'
+]);
+
+Route::get('/pesquisaEstoque',[
+    'as' => 'pesquisaEstoque',
+    'uses' => 'EstoqueController@recebePesquisa'
 ]);
